@@ -89,7 +89,7 @@ const Chatbot: React.FC = () => {
           ))}
         </div>
       </div>
-      <div className="flex items-center w-full max-w-4xl mx-auto mt-4 px-4">
+      <div className="flex items-center w-full max-w-4xl mx-auto mt-4 pl-2 pr-2">
         <input
           type="file"
           id="file-upload"

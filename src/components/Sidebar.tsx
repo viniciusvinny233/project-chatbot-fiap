@@ -32,17 +32,17 @@ const Sidebar: React.FC = () => {
   }, []);
 
   return (
-    <div className={`relative  ${isMobile ? 'z-50 w-20' : 'flex'} `}>
+    <div className={`relative  ${isMobile ? 'z-50 w-2' : 'flex'} `}>
       <div
         className={`h-screen bg-[#2A2A2A] text-white flex flex-col p-4 transition-all duration-300 ${
-          isCollapsed ? (isMobile ? 'w-20 relative'  : 'w-20 relative') : 'w-72 relative'
+          isCollapsed ? (isMobile ? 'w-2 relative p-1'  : 'w-2 relative p-1') : 'w-72 relative'
         } ${isMobile && isCollapsed ? 'absolute' : ''} ${
           isMobile && !isCollapsed ? 'absolute left-0 w-72' : ''
         }`}
         style={{ position: isMobile ? 'absolute' : 'relative' }}
       >
         <div className="flex items-center mb-12 justify-between">
-          <img src={LogoMenu} alt="Icon" className={`min-w-14 h-14 ${isCollapsed ? 'ml-1 min-w-[2.5rem] h-[2.5rem]' : ''}`} />
+          <img src={LogoMenu} alt="Icon" className={`min-w-14 h-14 ${isCollapsed ? 'mt-5 min-w-[0rem] h-[0rem]' : ''}`} />
           {!isCollapsed && (
             <span className="text-[2.6rem] font-extrabold text-[#92DCE1] font-montserrat">CATECH</span>
           )}
@@ -63,47 +63,47 @@ const Sidebar: React.FC = () => {
             href="/"
             className={`flex items-center space-x-2 hover:text-blue-500 ${isCollapsed ? 'justify-center' : ''}`}
           >
-            <img src={HomeIcon} alt="Página Inicial" className="w-8 h-8 mr-1 " />
+            <img src={HomeIcon} alt="Página Inicial" className="w-7 h-7 mr-1 " />
             {!isCollapsed && <span className="text-lg">Página Inicial</span>}
           </a>
           <a
             href="chatbot"
             className={`flex items-center space-x-2 hover:text-blue-500 ${isCollapsed ? 'justify-center' : ''}`}
           >
-            <img src={ChatbotIcon} alt="Chatbot" className="w-8 h-8 mr-1" />
+            <img src={ChatbotIcon} alt="Chatbot" className="w-7 h-7 mr-1" />
             {!isCollapsed && <span className="text-lg">Chatbot</span>}
           </a>
           <a
             href="faq"
             className={`flex items-center space-x-2 hover:text-blue-500 ${isCollapsed ? 'justify-center' : ''}`}
           >
-            <img src={FaqIcon} alt="Perguntas Frequentes" className="w-8 h-8 mr-1" />
+            <img src={FaqIcon} alt="Perguntas Frequentes" className="w-7 h-7 mr-1" />
             {!isCollapsed && <span className="text-lg">Perguntas frequentes</span>}
           </a>
           <a
             href="previous-calls"
             className={`flex items-center space-x-2 hover:text-blue-500 ${isCollapsed ? 'justify-center' : ''}`}
           >
-            <img src={PreviousCallsIcon} alt="Chamados Anteriores" className="w-8 h-8 mr-1" />
+            <img src={PreviousCallsIcon} alt="Chamados Anteriores" className="w-7 h-7 mr-1" />
             {!isCollapsed && <span className="text-lg">Chamados anteriores</span>}
           </a>
           <a
             href="about"
             className={`flex items-center space-x-2 hover:text-blue-500 ${isCollapsed ? 'justify-center' : ''}`}
           >
-            <img src={AboutIcon} alt="Sobre o Projeto" className="w-8 h-8 mr-1" />
+            <img src={AboutIcon} alt="Sobre o Projeto" className="w-7 h-7 mr-1" />
             {!isCollapsed && <span className="text-lg">Sobre o Projeto</span>}
           </a>
         </nav>
       </div>
       <button
         onClick={() => setIsCollapsed(!isCollapsed)}
-        className={`absolute top-[8.25rem] ${isCollapsed ? 'right-[-1rem] duration-300' : 'right-[-14.35rem] lg:right-[-1.35rem] duration-300'} bg-[#2A2A2A] p-1.5 rounded-full focus:outline-none`}
+        className={`absolute top-[5rem] ${isCollapsed ? 'right-[-1rem] duration-300 p-0' : 'right-[-18.5rem] lg:right-[-1.35rem] duration-300'} bg-[#2A2A2A] p-1.5 rounded-full focus:outline-none`}
       >
         <img
           src={isCollapsed ? SetaDireita : SetaEsquerda}
           alt="Toggle"
-          className="w-6 h-6 text-[#000000]"
+          className={`w-6 h-6 text-[#000000] ${isCollapsed ? "w-10 h-8" : "" } `}
         />
       </button>
     </div>
