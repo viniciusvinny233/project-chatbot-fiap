@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Home from './pages/Home';
@@ -14,7 +13,7 @@ const App: React.FC = () => {
         <div className='border-gradient-right'>
           <Sidebar />
         </div>
-        <div className="flex-1  text-white bg-[#1a1a1a]">
+        <div className="flex-1 text-white bg-[#1a1a1a]">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/chatbot" element={<Chatbot />} />
