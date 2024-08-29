@@ -5,6 +5,8 @@ import Ana from '../assets/images/ana.png';
 import Vitor from '../assets/images/vitor.jfif';
 import SetaDireita from '../assets/images/seta-direta-about.png';
 import Linkedin from '../assets/images/linkedIn.png';
+import Matheus from '../assets/images/matheus.jpeg';
+import Dionisio from '../assets/images/dionisio.jpeg';
 
 const About: React.FC = () => {
   return (
@@ -41,7 +43,7 @@ const About: React.FC = () => {
         </div>
 
         <div className="bg-[#2a2a2a] rounded-3xl border-gradient-about h-80 relative">
-          <img src={MarcosVinicius} alt="Matheus Guedes Bertaioilli" className="w-full h-44 rounded-[1.8rem] object-cover p-4" />
+          <img src={Matheus} alt="Matheus Guedes Bertaioilli" className="w-full h-44 rounded-[1.8rem] object-cover p-4" />
           <div className="absolute top-[7.5rem] right-6">
             <a href="https://www.linkedin.com/in/matheusguedes" target="_blank" rel="noopener noreferrer">
               <img src={Linkedin} alt="LinkedIn" className="w-8 h-8" />
@@ -62,9 +64,23 @@ const About: React.FC = () => {
             </a>
           </div>
           <div className="px-4">
-            <h2 className="text-6xl font-bold text-[#C5E2E4] leading-[0.5] pt-3">PITCH</h2>
+            <h2 className="text-6xl font-bold text-[#C5E2E4] leading-[0.5] pt-3">PITCH I</h2>
             <p className="mt-4 text-gray-300 leading-[0.5] pt-4">VITOR FUTIDA STERNIK</p>
             <p className=" text-gray-300">RM 98697</p>
+          </div>
+        </div>
+
+        <div className="bg-[#2a2a2a] rounded-3xl border-gradient-about h-80 relative">
+          <img src={Dionisio} alt="Dionisio Sant'Ana Pereira" className="w-full h-44 rounded-[1.8rem] object-cover p-4" />
+          <div className="absolute top-[7.5rem] right-6">
+            <a href="https://www.linkedin.com/in/dionisio-santana-pereira/" target="_blank" rel="noopener noreferrer">
+              <img src={Linkedin} alt="LinkedIn" className="w-8 h-8" />
+            </a>
+          </div>
+          <div className="px-4">
+            <h2 className="text-3xl font-bold text-[#C5E2E4] leading-[0.5] pt-3 xs:text-6xl xs:leading-[0.5]">PITCH II</h2>
+            <p className="mt-4 text-gray-300 leading-[0.5] pt-4">DIONISIO SANT'ANA PEREIRA</p>
+            <p className=" text-gray-300">RM 97985</p>
           </div>
         </div>
 
