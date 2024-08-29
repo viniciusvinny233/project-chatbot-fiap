@@ -6,7 +6,7 @@ import LogoRosaIcon from '../assets/images/logo-rosa.png';
 
 const Home: React.FC = () => {
   return (
-    <div className="flex flex-col min-h-screen md:h-max items-center justify-between text-center px-4 md:px-8 lg:px-16">
+    <div className="flex flex-col min-h-screen md:h-max items-center justify-between text-center px-4 md:px-8 lg:px-16 bg-custom-gradient">
       <div className="flex flex-col items-center mb-12">
         <div className="flex flex-col md:flex-row items-center mb-12 mt-3 justify-center">
           <img src={FiapIcon} alt="Icon" className="w-[8em] h-auto md:w-[10em] md:h-[1.25em] mr-0 md:mr-4 mb-4 md:mb-0" />
