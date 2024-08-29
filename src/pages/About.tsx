@@ -16,7 +16,7 @@ const About: React.FC = () => {
         <div className="bg-[#2a2a2a] rounded-3xl border-gradient-about h-80 relative">
           <img src={Ana} alt="Ana Vitória Baetas" className="w-full h-44 rounded-[1.8rem] object-cover p-4" />
           <div className="absolute top-[7.5rem] right-6">
-            <a href="https://www.linkedin.com/in/anavitoria" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/anavitoriabaetas/" target="_blank" rel="noopener noreferrer">
               <img src={Linkedin} alt="LinkedIn" className="w-8 h-8" />
             </a>
           </div>
@@ -31,7 +31,7 @@ const About: React.FC = () => {
         <div className="bg-[#2a2a2a] rounded-3xl border-gradient-about h-80 relative">
           <img src={MarcosVinicius} alt="Marcos Vinicius Pinheiro" className="w-full h-44 rounded-[1.8rem] object-cover p-4" />
           <div className="absolute top-[7.5rem] right-6">
-            <a href="https://www.linkedin.com/in/marcosvinicius" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/vnxdeveloper/" target="_blank" rel="noopener noreferrer">
               <img src={Linkedin} alt="LinkedIn" className="w-8 h-8" />
             </a>
           </div>
@@ -45,7 +45,7 @@ const About: React.FC = () => {
         <div className="bg-[#2a2a2a] rounded-3xl border-gradient-about h-80 relative">
           <img src={Matheus} alt="Matheus Guedes Bertaioilli" className="w-full h-44 rounded-[1.8rem] object-cover p-4" />
           <div className="absolute top-[7.5rem] right-6">
-            <a href="https://www.linkedin.com/in/matheusguedes" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/matheusbertaiolli/" target="_blank" rel="noopener noreferrer">
               <img src={Linkedin} alt="LinkedIn" className="w-8 h-8" />
             </a>
           </div>
@@ -59,7 +59,7 @@ const About: React.FC = () => {
         <div className="bg-[#2a2a2a] rounded-3xl border-gradient-about h-80 relative">
           <img src={Vitor} alt="Vitor Futida Sternik" className="w-full h-44 rounded-[1.8rem] object-cover p-4" />
           <div className="absolute top-[7.5rem] right-6">
-            <a href="https://www.linkedin.com/in/vitorfutida" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/vitor-sternik-7170b5228/" target="_blank" rel="noopener noreferrer">
               <img src={Linkedin} alt="LinkedIn" className="w-8 h-8" />
             </a>
           </div>
