@@ -19,6 +19,9 @@ export default {
         customBlue: 'rgba(191, 243, 255, 0.9)',
         customText: 'rgba(197, 226, 228, 0.7)',
       },
+      backgroundImage: {
+        'custom-gradient':'linear-gradient(90deg, rgba(130, 224, 245, 0.02) 0%, rgba(130, 224, 245, 0.05) 39%, rgba(226, 118, 150, 0.05) 64%, rgba(226, 118, 150, 0.02) 100%)',
+      },
     },
   },
   plugins: [],
