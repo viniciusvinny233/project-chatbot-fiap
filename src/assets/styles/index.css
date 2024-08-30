@@ -24,7 +24,7 @@ body {
 
 .border-gradient {
   border: double 1px transparent;
-  background-image: linear-gradient(black, black), 
+  background-image: linear-gradient(#1A1A1A, #1A1A1A), 
   linear-gradient(
     90deg,
     #77C1C6,
