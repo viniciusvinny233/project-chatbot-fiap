@@ -10,60 +10,37 @@ const Faq: React.FC = () => {
 
   const faqs = [
     {
-      question: "Imperdiet massa tincidunt nunc pulvinar?",
-      answer: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Diam vulputate ut pharetra sit amet aliquam id diam. Enim neque volutpat ac tincidunt vitae. Lorem ipsum dolor sit amet,
-      consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam vulputate ut pharetra sit
-      amet aliquam id diam. Enim neque volutpat ac tincidunt vitae...`
+      question: "Remoção de acesso",
+      answer: `Esta instrução de trabalho descreve a execução das atividades de remoção de acesso dos colaboradores na ferramenta SISTEMA Y.`
     },
     {
-      question: "Imperdiet massa tincidunt nunc pulvinar?",
-      answer: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Diam vulputate ut pharetra sit amet aliquam id diam. Enim neque volutpat ac tincidunt vitae. Lorem ipsum dolor sit amet,
-      consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam vulputate ut pharetra sit
-      amet aliquam id diam. Enim neque volutpat ac tincidunt vitae...`
+      question: "Atualizar dados da BU",
+      answer: `Quando um colaborador DA EMPRESA X entrar em contato comunicado que agora seu e-mail deixará de ser DA EMPRESA X e se tornará DA EMPRESA X ou DA EMPRESA X(por exemplo). O analista N1 deve realizar as orientações descritas nessa IT.`
     },
     {
-      question: "Imperdiet massa tincidunt nunc pulvinar?",
-      answer: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Diam vulputate ut pharetra sit amet aliquam id diam. Enim neque volutpat ac tincidunt vitae. Lorem ipsum dolor sit amet,
-      consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam vulputate ut pharetra sit
-      amet aliquam id diam. Enim neque volutpat ac tincidunt vitae...`
+      question: "Atualizar dados da BU",
+      answer: `Quando um colaborador DA EMPRESA X entrar em contato comunicado que agora seu e-mail deixará de ser DA EMPRESA X e se tornará DA EMPRESA X ou DA EMPRESA X(por exemplo). O analista N1 deve realizar as orientações descritas nessa IT.`
     },
     {
-      question: "Imperdiet massa tincidunt nunc pulvinar?",
-      answer: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Diam vulputate ut pharetra sit amet aliquam id diam. Enim neque volutpat ac tincidunt vitae. Lorem ipsum dolor sit amet,
-      consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam vulputate ut pharetra sit
-      amet aliquam id diam. Enim neque volutpat ac tincidunt vitae...`
+      question: "Desbloqueio de Usuário",
+      answer: `Esta instrução de trabalho tem como objetivo orientar os analistas no processo de desbloqueio de usuário no sistema SAP e Portal SAP.`
     },
     {
-      question: "Imperdiet massa tincidunt nunc pulvinar?",
-      answer: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Diam vulputate ut pharetra sit amet aliquam id diam. Enim neque volutpat ac tincidunt vitae. Lorem ipsum dolor sit amet,
-      consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam vulputate ut pharetra sit
-      amet aliquam id diam. Enim neque volutpat ac tincidunt vitae...`
+      question: "Reset de Senha",
+      answer: `Esta instrução de trabalho tem como objetivo orientar os analistas no processo de alteração de senha do usuário nos sistemas SAP e Portal SAP.`
     },
     {
-      question: "Imperdiet massa tincidunt nunc pulvinar?",
-      answer: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Diam vulputate ut pharetra sit amet aliquam id diam. Enim neque volutpat ac tincidunt vitae. Lorem ipsum dolor sit amet,
-      consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam vulputate ut pharetra sit
-      amet aliquam id diam. Enim neque volutpat ac tincidunt vitae...`
+      question: "Alteração de Acessos",
+      answer: `Esta Instrução de Trabalho visa orientar na atividade de alteração de acesso do usuário no sistema SISTEMA Y.`
     },
     {
-      question: "Imperdiet massa tincidunt nunc pulvinar?",
-      answer: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Diam vulputate ut pharetra sit amet aliquam id diam. Enim neque volutpat ac tincidunt vitae. Lorem ipsum dolor sit amet,
-      consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam vulputate ut pharetra sit
-      amet aliquam id diam. Enim neque volutpat ac tincidunt vitae...`
+      question: "Alterar Perfil de Acesso ",
+      answer: `Esta instrução de trabalho orienta o passo a passo para atribuição de grupos de acesso ao SISTEMA Y, para a atribuição do mesmo é necessário que os seguintes questionamentos tenham sido respondidos via chamado. Com autorização gerencial em anexo.
+`
     },
     {
-      question: "Imperdiet massa tincidunt nunc pulvinar?",
-      answer: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Diam vulputate ut pharetra sit amet aliquam id diam. Enim neque volutpat ac tincidunt vitae. Lorem ipsum dolor sit amet,
-      consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam vulputate ut pharetra sit
-      amet aliquam id diam. Enim neque volutpat ac tincidunt vitae...`
+      question: "Manutenção de Perfil no SISTEMA Y",
+      answer: `Este documento estabelece o procedimento para os analistas de Acesso criar, alterar e/ou modificar Perfil e Funções no SISTEMA Y (SISTEMA Y e Pagamento aos Distribuidores e Redes) que podem ser acessados através do endereço do ambiente de produção https://xxxxxxxxxxxxxxxx`
     },
   ];
 
