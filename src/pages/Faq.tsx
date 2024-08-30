@@ -52,6 +52,12 @@ const Faq: React.FC = () => {
           <p className="mt-4 text-gray-400 w-full  text-center">
             Caso sua dúvida não esteja aqui é só chamar nosso chatbot, Catty.
           </p>
+          <div className="flex items-center justify-center  mb-12 relative">
+            <input 
+            type="text" 
+            placeholder="Buscar um chamado ou assunto"
+            className="mt-4 p-3 bg-[#222222] rounded-md md:w-80 border min-w-64 border-[#363636] focus:outline-none focus:bg-[#1a1a1a] "/>
+          </div>
         </div>
 
         <div className="mt-8 max-h-[36rem] md:max-h-[42rem] overflow-y-auto space-y-5 scrollbar-thin scrollbar-thumb-rounded-lg scrollbar-thumb-[#77C1C6] scrollbar-track-[#2a2a2a] pr-4">
