@@ -458,7 +458,7 @@ const Faq: React.FC = () => {
           
         </div>
 
-        <div className="mt-8 max-h-[36rem] md:max-h-[42rem] overflow-y-auto space-y-5 scrollbar-thin scrollbar-thumb-rounded-lg scrollbar-thumb-[#77C1C6] scrollbar-track-[#2a2a2a] pr-4 font-inter">
+        <div className="mt-8 max-h-[36rem] md:max-h-[40rem] overflow-y-auto space-y-5 scrollbar-thin scrollbar-thumb-rounded-lg scrollbar-thumb-[#77C1C6] scrollbar-track-[#2a2a2a] pr-4 font-inter">
           {faqs.map((faq, index) => (
             <div key={index} className="text-gray-300 p-4 bg-[#2a2a2a] rounded-xl shadow-md cursor-pointer" onClick={() => toggleExpand(index)}>
               <h3 className="text-xl font-bold mb-2 flex justify-between">
