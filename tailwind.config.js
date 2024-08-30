@@ -20,7 +20,7 @@ export default {
         customText: 'rgba(197, 226, 228, 0.7)',
       },
       backgroundImage: {
-        'custom-gradient':'linear-gradient(90deg, rgba(130, 224, 245, 0.02) 0%, rgba(130, 224, 245, 0.03) 39%, rgba(226, 118, 150, 0.03) 64%, rgba(226, 118, 150, 0.01) 100%)',,
+        'custom-gradient':'linear-gradient(90deg, rgba(130, 224, 245, 0.02) 0%, rgba(130, 224, 245, 0.03) 39%, rgba(226, 118, 150, 0.03) 64%, rgba(226, 118, 150, 0.01) 100%)',
       },
     },
   },
