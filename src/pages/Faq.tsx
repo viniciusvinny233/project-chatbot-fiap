@@ -442,7 +442,7 @@ const Faq: React.FC = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-[#1a1a1a] text-white p-4 md:p-13 bg-custom-gradient">
+    <div className="flex flex-col items-center justify-center max-h-screen bg-[#1a1a1a] text-white p-4 md:p-13 bg-custom-gradient">
       <div className="w-full max-w-7xl">
         <div className='justify-center md:flex-row md:justify-between items-center'>
           <h1 className="text-4xl font-bold bg-gradient-to-r from-[#82E0F5] to-[#E27696] text-transparent bg-clip-text mt-2 md:text-center text-center md:mt-3">CHAMADOS FREQUENTES</h1>
@@ -457,7 +457,7 @@ const Faq: React.FC = () => {
           </div>
         </div>
 
-        <div className="mt-8 max-h-[36rem] md:max-h-[42rem] overflow-y-auto space-y-5 scrollbar-thin scrollbar-thumb-rounded-lg scrollbar-thumb-[#77C1C6] scrollbar-track-[#2a2a2a] pr-4">
+        <div className="mt-8 max-h-[36rem] md:max-h-[42rem] overflow-y-auto space-y-5 scrollbar-thin scrollbar-thumb-rounded-lg scrollbar-thumb-[#77C1C6] scrollbar-track-[#2a2a2a] pr-4 font-inter">
           {faqs.map((faq, index) => (
             <div key={index} className="p-4 bg-[#2a2a2a] rounded-xl shadow-md cursor-pointer" onClick={() => toggleExpand(index)}>
               <h3 className="text-xl font-bold mb-2 flex justify-between">
