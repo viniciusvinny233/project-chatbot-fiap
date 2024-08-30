@@ -80,19 +80,6 @@ const Faq: React.FC = () => {
               {expandedIndex === index && (
                 <div>
                   <p className="text-gray-300 mb-4">{faq.description}</p>
-                  <div className="flex justify-between items-center mt-4">
-                    <p className="text-white font-bold">Essa resposta te ajudou?</p>
-                    <div className="flex flex-col space-x-4 md:flex-row leading-[1rem] md:leading-5">
-                      <button className="bg-[#f85591] hover:bg-pink-700 text-black font-bold py-2 px-4 rounded-xl ml-4 md:ml-0">
-                        SIM
-                      </button>
-                      <a href='previous-calls'>
-                        <button className="bg-[#f85591] hover:bg-pink-700 text-black font-bold py-2 px-4 rounded-xl mt-4 md:mt-0">
-                          AINDA PRECISO DE AJUDA
-                        </button>
-                      </a>
-                    </div>
-                  </div>
                 </div>
               )}
             </div>
