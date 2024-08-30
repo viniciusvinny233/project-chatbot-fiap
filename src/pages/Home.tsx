@@ -20,7 +20,7 @@ const Home: React.FC = () => {
         Conheça nossa gatinha assistente, Catty, e descubra como podemos facilitar seu trabalho.
         </p>
         <div className="mt-5 flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
-          <a href="https://drive.google.com/drive/u/0/folders/1MpTPHKNOtybY12u4O4a6oo-l4zRSiavj" target='_blank'>
+          <a href="https://drive.google.com/file/d/16EFh6DlUEKhbncXS_qePD6NtpaH1wMfg/view?usp=sharing" target='_blank'>
           <button className="font-inter font-semibold w-[9.5rem] h-[3.75rem] bg-transparent border border-gradient text-[#D7E5E6] rounded-[0.9rem] hover:text-gray-400 ">
             PDF Projeto
           </button>
@@ -30,7 +30,7 @@ const Home: React.FC = () => {
             Figma
           </button>
           </a>
-          <a href="#" target='_blank'>
+          <a href="https://www.youtube.com/watch?v=gD09yEANSOw" target='_blank'>
           <button className="font-inter font-semibold w-[9.5rem] h-[3.75rem] border border-gradient text-[#D7E5E6] rounded-[0.9rem] hover:text-gray-400">
             Pitch
           </button>
