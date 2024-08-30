@@ -442,7 +442,7 @@ const Faq: React.FC = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center max-h-screen bg-[#1a1a1a] text-white p-4 md:p-13 bg-custom-gradient">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-[#1a1a1a] text-white p-4 md:p-13">
       <div className="w-full max-w-7xl">
         <div className='justify-center md:flex-row md:justify-between items-center'>
           <h1 className="text-4xl font-bold bg-gradient-to-r from-[#82E0F5] to-[#E27696] text-transparent bg-clip-text mt-2 md:text-center text-center md:mt-3">CHAMADOS FREQUENTES</h1>
