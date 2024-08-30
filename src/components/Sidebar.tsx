@@ -78,14 +78,14 @@ const Sidebar: React.FC = () => {
             className={`flex items-center space-x-2 hover:text-blue-500 ${isCollapsed ? 'justify-center' : ''}`}
           >
             <img src={FaqIcon} alt="Perguntas Frequentes" className="w-7 h-7 mr-1" />
-            {!isCollapsed && <span className="text-lg">Perguntas frequentes</span>}
+            {!isCollapsed && <span className="text-lg">Chamados frequentes</span>}
           </a>
           <a
             href="previous-calls"
             className={`flex items-center space-x-2 hover:text-blue-500 ${isCollapsed ? 'justify-center' : ''}`}
           >
             <img src={PreviousCallsIcon} alt="Chamados Anteriores" className="w-7 h-7 mr-1" />
-            {!isCollapsed && <span className="text-lg">Chamados anteriores</span>}
+            {!isCollapsed && <span className="text-lg">Chamados</span>}
           </a>
           <a
             href="about"
