@@ -25,22 +25,22 @@ const Home: React.FC = () => {
             PDF Projeto
           </button>
           </a>
-          <a href="https://www.figma.com/design/cPqrECL5rbLyhfT9QExV10/Challenge-Softtek-%7C-Catech?node-id=2-2&t=f11sM7WzVzYyUiTg-1">
+          <a href="https://www.figma.com/design/cPqrECL5rbLyhfT9QExV10/Challenge-Softtek-%7C-Catech?node-id=2-2&t=f11sM7WzVzYyUiTg-1" target='_blank'>
           <button className="font-inter font-semibold w-[9.5rem] h-[3.75rem] border border-gradient text-[#D7E5E6] rounded-[0.9rem] hover:text-gray-400">
             Figma
           </button>
           </a>
-          <a href="#">
+          <a href="#" target='_blank'>
           <button className="font-inter font-semibold w-[9.5rem] h-[3.75rem] border border-gradient text-[#D7E5E6] rounded-[0.9rem] hover:text-gray-400">
             Pitch
           </button>
           </a>
-          <a href="https://github.com/viniciusvinny233/project-chatbot-fiap/tree/master">
+          <a href="https://github.com/viniciusvinny233/project-chatbot-fiap/tree/master" target='_blank'>
           <button className="font-inter font-semibold w-[9.5rem] h-[3.75rem] bg-transparent border border-gradient text-[#D7E5E6] rounded-[0.9rem] hover:text-gray-400">
             Frontend
           </button>
           </a>
-          <a href="https://github.com/matheusgbrt/ChallengeSoftTek">
+          <a href="https://github.com/matheusgbrt/ChallengeSoftTek" target='_blank'>
           <button className="font-inter font-semibold w-[9.5rem] h-[3.75rem] bg-transparent border border-gradient text-[#D7E5E6] rounded-[0.9rem] hover:text-gray-400">
             Backend
           </button>
