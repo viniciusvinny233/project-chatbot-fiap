@@ -64,35 +64,35 @@ const Sidebar: React.FC = () => {
             className={`flex items-center space-x-2 hover:text-blue-500 ${isCollapsed ? 'justify-center' : ''}`}
           >
             <img src={HomeIcon} alt="Página Inicial" className="w-7 h-7 mr-1 " />
-            {!isCollapsed && <span className="text-lg">Página Inicial</span>}
+            {!isCollapsed && <span className="text-[1.1rem]">Página Inicial</span>}
           </a>
           <a
             href="chatbot"
             className={`flex items-center space-x-2 hover:text-blue-500 ${isCollapsed ? 'justify-center' : ''}`}
           >
             <img src={ChatbotIcon} alt="Chatbot" className="w-7 h-7 mr-1" />
-            {!isCollapsed && <span className="text-lg">Chatbot</span>}
+            {!isCollapsed && <span className="text-[1.1rem]">Chatbot</span>}
           </a>
           <a
             href="faq"
             className={`flex items-center space-x-2 hover:text-blue-500 ${isCollapsed ? 'justify-center' : ''}`}
           >
             <img src={FaqIcon} alt="Perguntas Frequentes" className="w-7 h-7 mr-1" />
-            {!isCollapsed && <span className="text-lg">Chamados frequentes</span>}
+            {!isCollapsed && <span className="text-[1.1rem]">Chamados frequentes</span>}
           </a>
           <a
             href="previous-calls"
             className={`flex items-center space-x-2 hover:text-blue-500 ${isCollapsed ? 'justify-center' : ''}`}
           >
             <img src={PreviousCallsIcon} alt="Chamados Anteriores" className="w-7 h-7 mr-1" />
-            {!isCollapsed && <span className="text-lg">Chamados</span>}
+            {!isCollapsed && <span className="text-[1.1rem]">Chamados</span>}
           </a>
           <a
             href="about"
             className={`flex items-center space-x-2 hover:text-blue-500 ${isCollapsed ? 'justify-center' : ''}`}
           >
             <img src={AboutIcon} alt="Sobre o Projeto" className="w-7 h-7 mr-1" />
-            {!isCollapsed && <span className="text-lg">Sobre o Projeto</span>}
+            {!isCollapsed && <span className="text-[1.1rem]">Sobre o Projeto</span>}
           </a>
         </nav>
       </div>
