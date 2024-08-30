@@ -81,7 +81,7 @@ const Chatbot: React.FC = () => {
   };
 
   return (
-    <div className='flex flex-col items-center min-h-screen w-full'>
+    <div className='flex flex-col items-center min-h-screen w-full bg-custom-gradient'>
       <div className="flex flex-col-reverse bg-[#1a1a1a] text-black p-4 w-full h-[90vh] max-w-[57rem] mx-auto">
         <div className="flex flex-col-reverse overflow-y-auto h-full scrollbar-thin scrollbar-thumb-rounded-lg scrollbar-thumb-[#77C1C6] scrollbar-track-[#2a2a2a] pr-4">
           {messages.map((message, index) => (
