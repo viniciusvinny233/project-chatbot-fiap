@@ -24,7 +24,7 @@ const Message = ({ text, isUserMessage, image, timestamp }: { text?: string, isU
         <div className={`max-w-xs p-3 ${isUserMessage 
           ? 'rounded-tl-2xl rounded-tr-2xl rounded-bl-2xl' 
           : 'rounded-tl-2xl rounded-br-2xl rounded-tr-2xl'} 
-          ${isUserMessage ? 'bg-[#3cd0db]' : 'bg-[#A7E2E4]'} text-gray-800 font-bold break-words whitespace-pre-wrap`}>
+          ${isUserMessage ? 'bg-[#3cd0db]' : 'bg-[#A7E2E4]'} text-gray-800 break-words whitespace-pre-wrap`}>
           {image ? <img src={image} alt="User upload" className="rounded-2xl" /> : text}
         </div>
         <span className={`text-xs text-gray-400 mt-1 ${isUserMessage ? 'text-right' : 'text-left'}`}>
@@ -82,7 +82,7 @@ const Chatbot: React.FC = () => {
 
   return (
     <div className='flex flex-col items-center min-h-screen w-full bg-custom-gradient'>
-      <div className="flex flex-col-reverse bg-[#1a1a1a] text-black p-4 w-full h-[90vh] max-w-[57rem] mx-auto">
+      <div className="flex flex-col-reverse bg-transparent text-black p-4 w-full h-[90vh] max-w-[57rem] mx-auto">
         <div className="flex flex-col-reverse overflow-y-auto h-full scrollbar-thin scrollbar-thumb-rounded-lg scrollbar-thumb-[#77C1C6] scrollbar-track-[#2a2a2a] pr-4">
           {messages.map((message, index) => (
             <Message key={index} text={message.text} isUserMessage={message.isUserMessage} image={message.image} timestamp={message.timestamp} />
