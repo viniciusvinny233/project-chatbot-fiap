@@ -20,14 +20,29 @@ const Home: React.FC = () => {
         Conheça nossa gatinha assistente, Catty, e descubra como podemos facilitar seu trabalho.
         </p>
         <div className="mt-5 flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
-          <a href="about">
-          <button className="w-[9.5rem] h-[3.75rem] bg-transparent border border-gradient text-[#D7E5E6] rounded-[0.9rem] hover:text-gray-400">
-            SOBRE O <br /> PROJETO
+          <a href="https://drive.google.com/drive/u/0/folders/1MpTPHKNOtybY12u4O4a6oo-l4zRSiavj" target='_blank'>
+          <button className="font-inter font-semibold w-[9.5rem] h-[3.75rem] bg-transparent border border-gradient text-[#D7E5E6] rounded-[0.9rem] hover:text-gray-400 ">
+            PDF Projeto
           </button>
           </a>
-          <a href="chatbot">
-          <button className="w-[9.5rem] h-[3.75rem] bg-[#E27696] hover:bg-pink-600 text-black rounded-[0.9rem] font-semibold">
-            CHATBOT
+          <a href="https://www.figma.com/design/cPqrECL5rbLyhfT9QExV10/Challenge-Softtek-%7C-Catech?node-id=2-2&t=f11sM7WzVzYyUiTg-1">
+          <button className="font-inter font-semibold w-[9.5rem] h-[3.75rem] border border-gradient text-[#D7E5E6] rounded-[0.9rem] hover:text-gray-400">
+            Figma
+          </button>
+          </a>
+          <a href="#">
+          <button className="font-inter font-semibold w-[9.5rem] h-[3.75rem] border border-gradient text-[#D7E5E6] rounded-[0.9rem] hover:text-gray-400">
+            Pitch
+          </button>
+          </a>
+          <a href="https://github.com/viniciusvinny233/project-chatbot-fiap/tree/master">
+          <button className="font-inter font-semibold w-[9.5rem] h-[3.75rem] bg-transparent border border-gradient text-[#D7E5E6] rounded-[0.9rem] hover:text-gray-400">
+            Frontend
+          </button>
+          </a>
+          <a href="https://github.com/matheusgbrt/ChallengeSoftTek">
+          <button className="font-inter font-semibold w-[9.5rem] h-[3.75rem] bg-transparent border border-gradient text-[#D7E5E6] rounded-[0.9rem] hover:text-gray-400">
+            Backend
           </button>
           </a>
         </div>
