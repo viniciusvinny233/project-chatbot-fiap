@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+iimport React, { useState } from 'react';
 import SetaBaixo from '../assets/images/arrow_down.png';
 
 const Faq: React.FC = () => {
@@ -79,7 +79,7 @@ const Faq: React.FC = () => {
               <p className="text-gray-300 mb-4">{faq.answer}</p>
               {expandedIndex === index && (
                 <div>
-                  <p className="text-gray-300 mb-4">{faq.answer}</p>
+                  <p className="text-gray-300 mb-4">{faq.description}</p>
                   <div className="flex justify-between items-center mt-4">
                     <p className="text-white font-bold">Essa resposta te ajudou?</p>
                     <div className="flex flex-col space-x-4 md:flex-row leading-[1rem] md:leading-5">
