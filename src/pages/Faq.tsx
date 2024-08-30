@@ -1,4 +1,4 @@
-iimport React, { useState } from 'react';
+import React, { useState } from 'react';
 import SetaBaixo from '../assets/images/arrow_down.png';
 
 const Faq: React.FC = () => {
