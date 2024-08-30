@@ -15,10 +15,9 @@ const Home: React.FC = () => {
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-inter text-customBlue mb-3 leading-tight">
           Bem vindo! <b>como posso ajudar você?</b>
         </h1>
-        <p className="text-customText font-inter max-w-2xl md:max-w-3xl lg:max-w-4xl px-4 md:px-0 leading-relaxed">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pharetra rutrum placerat.
-          Donec id libero nibh. Pellentesque viverra ac nisi in aliquet. Nulla a turpis rutrum,
-          pulvinar quam sed, finibus sapien.
+        <p className="text-customText font-inter max-w-2xl md:max-w-3xl lg:max-w-5xl px-4 md:px-0 leading-relaxed">
+        Seu assistente técnico inteligente desenvolvido para oferecer suporte de forma amigável e eficiente. Combinamos tecnologia de ponta com uma experiência acolhedora. 
+        Conheça nossa gatinha assistente, Catty, e descubra como podemos facilitar seu trabalho.
         </p>
         <div className="mt-5 flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
           <a href="about">
