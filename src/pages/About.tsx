@@ -93,7 +93,7 @@ const About: React.FC = () => {
             </p>
           </div>
           <div className="flex justify-center">
-            <a href="https://drive.google.com/drive/folders/1MpTPHKNOtybY12u4O4a6oo-l4zRSiavj?usp=drive_link" target="_blank" className="flex items-center justify-between w-full h-[3rem] mb-5 mx-2 xl:mx-5 bg-[#1E1E1E] text-white rounded-full">
+            <a href="https://drive.google.com/file/d/16EFh6DlUEKhbncXS_qePD6NtpaH1wMfg/view?usp=sharing" target="_blank" className="flex items-center justify-between w-full h-[3rem] mb-5 mx-2 xl:mx-5 bg-[#1E1E1E] text-white rounded-full">
               <span className=" p-2 rounded-full ml-3">
 
               </span>
