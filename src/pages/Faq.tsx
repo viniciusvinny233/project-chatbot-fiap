@@ -9,7 +9,7 @@ const Faq: React.FC = () => {
   };
 
   const faqs = [
-     {
+    {
       question: "Remoção de acesso",
       answer: `Esta instrução de trabalho descreve a execução das atividades de remoção de acesso dos colaboradores na ferramenta SISTEMA Y.`,
       description:      (<>
@@ -455,18 +455,19 @@ const Faq: React.FC = () => {
             placeholder="Buscar um chamado ou assunto"
             className="mt-4 p-3 bg-[#222222] rounded-md md:w-80 border min-w-64 border-[#363636] focus:outline-none focus:bg-[#1a1a1a] "/>
           </div>
+          
         </div>
 
         <div className="mt-8 max-h-[36rem] md:max-h-[42rem] overflow-y-auto space-y-5 scrollbar-thin scrollbar-thumb-rounded-lg scrollbar-thumb-[#77C1C6] scrollbar-track-[#2a2a2a] pr-4 font-inter">
           {faqs.map((faq, index) => (
-            <div key={index} className="p-4 bg-[#2a2a2a] rounded-xl shadow-md cursor-pointer" onClick={() => toggleExpand(index)}>
+            <div key={index} className="text-gray-300 p-4 bg-[#2a2a2a] rounded-xl shadow-md cursor-pointer" onClick={() => toggleExpand(index)}>
               <h3 className="text-xl font-bold mb-2 flex justify-between">
                 {faq.question}
                 <span className={`transform transition-transform duration-300 ${expandedIndex === index ? 'rotate-180' : ''}`}>
                   <img src={SetaBaixo} alt="Expandir" className="w-5 h-5" />
                 </span>
               </h3>
-              <p className="text-gray-300 mb-4">{faq.answer}</p>
+              <p className="mb-4">{faq.answer}</p>
               {expandedIndex === index && (
                 <div>
                   <p className="text-gray-300 mb-4">{faq.description}</p>
