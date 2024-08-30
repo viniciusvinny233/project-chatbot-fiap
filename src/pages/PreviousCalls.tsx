@@ -8,7 +8,7 @@ const PreviousCalls: React.FC = () => {
       subject: "Criar usuário de rede",
       status: "EM ANDAMENTO",
       statusColor: "bg-yellow-600",
-      statusTextColor: "text-yellow-300",
+      statusTextColor: "text-yellow-200",
       lastAtt: "XX/XX/XX XX:XX:XX",
       resolutionDate: "XX/XX/XX XX:XX:XX",
       finalDate: "XX/XX/XX XX:XX:XX",
@@ -78,7 +78,7 @@ const PreviousCalls: React.FC = () => {
             </div>
             <div className="flex flex-col">
               {calls.map((call, index) => (
-                <div key={index} className="flex flex-col md:flex-row border-t-2 border-gray-600 py-4 px-2 md:px-4">
+                <div key={index} className="flex flex-col md:flex-row border-t-2 border-gray-600 py-4 px-2 md:px-4 text-sm">
                   <div className="w-full md:w-[12%] mr-2 ml-2 md:ml-0">{call.date}</div>
                   <div className="w-full md:w-[68%] mx-2">{call.subject}</div>
                   <div className="w-full md:w-[20%] ml-2 mt-2 md:mt-0 text-right md:text-left">
