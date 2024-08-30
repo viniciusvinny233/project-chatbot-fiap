@@ -11,36 +11,43 @@ const Faq: React.FC = () => {
   const faqs = [
     {
       question: "Remoção de acesso",
-      answer: `Esta instrução de trabalho descreve a execução das atividades de remoção de acesso dos colaboradores na ferramenta SISTEMA Y.`
+      answer: `Esta instrução de trabalho descreve a execução das atividades de remoção de acesso dos colaboradores na ferramenta SISTEMA Y.`,
+      description: 'Descrição 1'
     },
     {
       question: "Atualizar dados da BU",
-      answer: `Quando um colaborador DA EMPRESA X entrar em contato comunicado que agora seu e-mail deixará de ser DA EMPRESA X e se tornará DA EMPRESA X ou DA EMPRESA X(por exemplo). O analista N1 deve realizar as orientações descritas nessa IT.`
+      answer: `Quando um colaborador DA EMPRESA X entrar em contato comunicado que agora seu e-mail deixará de ser DA EMPRESA X e se tornará DA EMPRESA X ou DA EMPRESA X(por exemplo). O analista N1 deve realizar as orientações descritas nessa IT.`,
+      description: 'Descrição 2'
     },
     {
       question: "Atualizar dados da BU",
-      answer: `Quando um colaborador DA EMPRESA X entrar em contato comunicado que agora seu e-mail deixará de ser DA EMPRESA X e se tornará DA EMPRESA X ou DA EMPRESA X(por exemplo). O analista N1 deve realizar as orientações descritas nessa IT.`
+      answer: `Quando um colaborador DA EMPRESA X entrar em contato comunicado que agora seu e-mail deixará de ser DA EMPRESA X e se tornará DA EMPRESA X ou DA EMPRESA X(por exemplo). O analista N1 deve realizar as orientações descritas nessa IT.`,
+      description: 'Descrição 3'
     },
     {
       question: "Desbloqueio de Usuário",
-      answer: `Esta instrução de trabalho tem como objetivo orientar os analistas no processo de desbloqueio de usuário no sistema SAP e Portal SAP.`
+      answer: `Esta instrução de trabalho tem como objetivo orientar os analistas no processo de desbloqueio de usuário no sistema SAP e Portal SAP.`,
+      description: 'Descrição 4'
     },
     {
       question: "Reset de Senha",
-      answer: `Esta instrução de trabalho tem como objetivo orientar os analistas no processo de alteração de senha do usuário nos sistemas SAP e Portal SAP.`
+      answer: `Esta instrução de trabalho tem como objetivo orientar os analistas no processo de alteração de senha do usuário nos sistemas SAP e Portal SAP.`,
+      description: 'Descrição 5'
     },
     {
       question: "Alteração de Acessos",
-      answer: `Esta Instrução de Trabalho visa orientar na atividade de alteração de acesso do usuário no sistema SISTEMA Y.`
+      answer: `Esta Instrução de Trabalho visa orientar na atividade de alteração de acesso do usuário no sistema SISTEMA Y.`,
+      description: 'Descrição 6'
     },
     {
       question: "Alterar Perfil de Acesso ",
-      answer: `Esta instrução de trabalho orienta o passo a passo para atribuição de grupos de acesso ao SISTEMA Y, para a atribuição do mesmo é necessário que os seguintes questionamentos tenham sido respondidos via chamado. Com autorização gerencial em anexo.
-`
+      answer: `Esta instrução de trabalho orienta o passo a passo para atribuição de grupos de acesso ao SISTEMA Y, para a atribuição do mesmo é necessário que os seguintes questionamentos tenham sido respondidos via chamado. Com autorização gerencial em anexo.`,
+      description: 'Descrição 7'
     },
     {
       question: "Manutenção de Perfil no SISTEMA Y",
-      answer: `Este documento estabelece o procedimento para os analistas de Acesso criar, alterar e/ou modificar Perfil e Funções no SISTEMA Y (SISTEMA Y e Pagamento aos Distribuidores e Redes) que podem ser acessados através do endereço do ambiente de produção https://xxxxxxxxxxxxxxxx`
+      answer: `Este documento estabelece o procedimento para os analistas de Acesso criar, alterar e/ou modificar Perfil e Funções no SISTEMA Y (SISTEMA Y e Pagamento aos Distribuidores e Redes) que podem ser acessados através do endereço do ambiente de produção https://xxxxxxxxxxxxxxxx`,
+      description: 'Descrição 8'
     },
   ];
 
@@ -69,6 +76,7 @@ const Faq: React.FC = () => {
                   <img src={SetaBaixo} alt="Expandir" className="w-5 h-5" />
                 </span>
               </h3>
+              <p className="text-gray-300 mb-4">{faq.answer}</p>
               {expandedIndex === index && (
                 <div>
                   <p className="text-gray-300 mb-4">{faq.answer}</p>
