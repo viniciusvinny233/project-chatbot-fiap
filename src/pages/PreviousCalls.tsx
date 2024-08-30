@@ -2,35 +2,60 @@ import React from 'react';
 
 const PreviousCalls: React.FC = () => {
   const calls = [
-    {
-      date: "19/05/2023 16:00",
-      subject: "Diam vulputate ut pharetra sit amet aliquam id diam. Enim neque volutpat ac tincidunt vitae semper quis lectus. In ante metus dictum at tempor.",
+        {
+      id: "XXXXXXXXX",
+      date: "XX/XX/XX XX:XX:XX",
+      subject: "Criar usuário de rede",
       status: "EM ANDAMENTO",
-      statusColor: "bg-yellow-500"
+      statusColor: "bg-yellow-600",
+      statusTextColor: "text-yellow-300",
+      lastAtt: "XX/XX/XX XX:XX:XX",
+      resolutionDate: "XX/XX/XX XX:XX:XX",
+      finalDate: "XX/XX/XX XX:XX:XX",
     },
     {
-      date: "19/05/2023 16:00",
-      subject: "Diam vulputate ut pharetra sit amet aliquam id diam. Enim neque volutpat ac tincidunt vitae semper quis lectus. In ante metus dictum at tempor.",
-      status: "FINALIZADO",
-      statusColor: "bg-green-500"
+      id: "INC0194887",
+      date: "09/02/24 17:15:47",
+      subject: "Lentidão sistema",
+      status: "RESOLVIDO",
+      statusColor: "bg-lime-700",
+      statusTextColor: "text-lime-300",
+      lastAtt: "03/05/24 11:34:26",
+      resolutionDate: "02/05/24 21:00:00",
+      finalDate: "01/05/24 15:00:04",
     },
     {
-      date: "19/05/2023 16:00",
-      subject: "Diam vulputate ut pharetra sit amet aliquam id diam. Enim neque volutpat ac tincidunt vitae semper quis lectus. In ante metus dictum at tempor.",
-      status: "ERRO",
-      statusColor: "bg-red-500"
+      id: "INC0201867",
+      date: "22/03/24 05:08:10",
+      subject: "Lentidão sistema",
+      status: "RESOLVIDO",
+      statusColor: "bg-lime-700",
+      statusTextColor: "text-lime-300",
+      lastAtt: "02/05/24 11:40:15",
+      resolutionDate: "01/05/24 21:00:00",
+      finalDate: "01/05/24 15:00:04",
     },
     {
-      date: "19/05/2023 16:00",
-      subject: "Diam vulputate ut pharetra sit amet aliquam id diam. Enim neque volutpat ac tincidunt vitae semper quis lectus. In ante metus dictum at tempor.",
-      status: "FINALIZADO",
-      statusColor: "bg-green-500"
+      id: "TASK0900023",
+      date: "19/02/24 05:16:45",
+      subject: "Incluir perfil espelho",
+      status: "FECHADO",
+      statusColor: "bg-zinc-600",
+      statusTextColor: "text-zinc-300",
+      lastAtt: "XX/XX/XX XX:XX:XX",
+      resolutionDate: "XX/XX/XX XX:XX:XX",
+      finalDate: "XX/XX/XX XX:XX:XX",
     },
     {
-      date: "19/05/2023 16:00",
-      subject: "Diam vulputate ut pharetra sit amet aliquam id diam. Enim neque volutpat ac tincidunt vitae semper quis lectus. In ante metus dictum at tempor.",
-      status: "FINALIZADO",
-      statusColor: "bg-green-500"
+      id: "TASK0912173",
+      date: "05/03/24 13:55:51",
+      subject: "Impressora Não Imprime",
+      status: "EM ANDAMENTO",
+      statusColor: "bg-yellow-600",
+      statusTextColor: "text-yellow-300",
+      lastAtt: "03/05/24 13:17:38",
+      resolutionDate: "02/05/24 21:00:00",
+      finalDate: "03/05/24 13:17:38",
     },
 
   ];
@@ -57,7 +82,7 @@ const PreviousCalls: React.FC = () => {
                   <div className="w-full md:w-[12%] mr-2 ml-2 md:ml-0">{call.date}</div>
                   <div className="w-full md:w-[68%] mx-2">{call.subject}</div>
                   <div className="w-full md:w-[20%] ml-2 mt-2 md:mt-0 text-right md:text-left">
-                    <span className={`inline-block py-1 px-3 rounded-xl font-bold text-white w-full md:w-44 text-center ${call.statusColor}`}>
+                    <span className={`inline-block py-1 px-3 rounded-xl font-bold text-white w-full md:w-44 text-center ${call.statusColor} ${call.statusTextColor}`}>
                       {call.status}
                     </span>
                   </div>
