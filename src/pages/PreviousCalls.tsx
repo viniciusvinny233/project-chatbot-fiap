@@ -38,12 +38,9 @@ const PreviousCalls: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-between min-h-screen bg-[#1a1a1a] text-white p-4 md:p-13 pb-0 md:pb-0">
       <div className="w-full max-w-7xl">
-        <div className='flex flex-col justify-center md:flex-row md:justify-between items-center'>
-          <p className="mt-4 text-gray-400 w-full md:max-w-56 md:text-start text-center text-sm md:text-base lg:text-lg">
-            Caso sua dúvida não esteja aqui é só chamar nosso chatbot, Catty.
-          </p>
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#77C1C6] mt-2 text-center">
-            CHAMADOS <br />ANTERIORES
+        <div className='flex flex-col justify-center md:flex-row items-center'>
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-[#82E0F5] to-[#E27696] text-transparent bg-clip-text mt-2 md:text-center text-center md:mt-3">
+            CHAMADOS
           </h1>
         </div>
 
