@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-interface TicketDetails {
+// Definir a interface do ticket completo
+interface TicketDetails 
+{
   idTicket: number;
   numeroTicket: string;
   descricaoTicket: string;
@@ -23,26 +25,34 @@ interface TicketDetails {
   descricaoGrupoSolicitante: string;
 }
 
-interface TicketComment {
-  idTicket: number;
+// Definir a interface para os comentários
+interface TicketComment 
+{
+    idTicket: number;
   idComentario: number;
   textoComentario: string;
   numeroTicket: string;
 }
 
-const TicketDetailsPage: React.FC = () => {
-  const { idTicket } = useParams<{ idTicket: string }>();
+const TicketDetailsPage: React.FC = () => 
+{
+  const { idTicket } = useParams<{ idTicket: string }>(); // Obter o id do ticket da URL
   const [ticket, setTicket] = useState<TicketDetails | null>(null);
-  const [comments, setComments] = useState<TicketComment[]>([]);
+  const [comments, setComments] = useState<TicketComment[]>([]); // Estado para os comentários
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [commentsError, setCommentsError] = useState<string | null>(null);
 
+  console.log('ID do Ticket:', idTicket); // Verificar se o idTicket está correto
+
   const ticketUrl = `https://softtek-api-5e04b4d63dfd.herokuapp.com/api/dadosticket?idticket=${idTicket}`;
   const commentsUrl = `https://softtek-api-5e04b4d63dfd.herokuapp.com/api/comentariosticket?idticket=${idTicket}`;
 
-  const fetchTicketDetails = async () => {
-    try {
+  // Função para buscar dados de um ticket específico
+  const fetchTicketDetails = async () => 
+  {
+    try 
+    {
       const response = await fetch(ticketUrl, {
         method: 'GET',
         headers: {
@@ -50,21 +60,29 @@ const TicketDetailsPage: React.FC = () => {
         },
       });
 
-      if (!response.ok) {
+      if (!response.ok) 
+      {
         throw new Error(`Erro ao buscar dados do ticket: ${response.status}`);
       }
 
       const data = await response.json();
-      setTicket(data);
+      console.log('Dados do Ticket:', data); // Log para verificar os dados do ticket
+      setTicket(data); // Atualiza o estado com os dados do ticket
       setIsLoading(false);
-    } catch (error: any) {
+    } 
+    catch (error: any) 
+    {
+      console.error('Erro ao buscar detalhes do ticket:', error);
       setError(error.message);
       setIsLoading(false);
     }
   };
 
-  const fetchTicketComments = async () => {
-    try {
+  // Função para buscar comentários do ticket
+  const fetchTicketComments = async () => 
+  {
+    try 
+    {
       const response = await fetch(commentsUrl, {
         method: 'GET',
         headers: {
@@ -72,26 +90,39 @@ const TicketDetailsPage: React.FC = () => {
         },
       });
 
-      if (!response.ok) {
+      if (!response.ok) 
+      {
         throw new Error(`Erro ao buscar comentários do ticket: ${response.status}`);
       }
 
       const data = await response.json();
-      if (Array.isArray(data.content)) {
+      console.log('Dados dos Comentários:', data); // Log para verificar os comentários
+      // Verifique se `data.content` é um array antes de setar no estado
+      if (Array.isArray(data.content)) 
+      {
         setComments(data.content);
-      } else {
+      } 
+      else 
+      {
         throw new Error('Comentários retornados não são um array.');
       }
-    } catch (error: any) {
+    } 
+    catch (error: any) 
+    {
+      console.error('Erro ao buscar comentários:', error);
       setCommentsError(error.message);
     }
   };
 
-  useEffect(() => {
-    if (idTicket) {
+  useEffect(() => 
+  {
+    if (idTicket) 
+    {
       fetchTicketDetails();
-      fetchTicketComments();
-    } else {
+      fetchTicketComments(); // Buscar os comentários ao carregar a página
+    } 
+    else 
+    {
       setError('ID do ticket não encontrado');
       setIsLoading(false);
     }
