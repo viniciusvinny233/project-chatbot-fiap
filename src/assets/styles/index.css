@@ -24,7 +24,20 @@ body {
 
 .border-gradient {
   border: double 1px transparent;
-  background-image: linear-gradient(#1A1A1A, #1A1A1A), 
+  background-image: linear-gradient(#1a1a1a, #1a1a1a), 
+  linear-gradient(
+    90deg,
+    #77C1C6,
+    #E27696
+  );
+  background-origin: border-box;
+  font-weight: bold;
+  background-clip: content-box, border-box;
+}
+
+.border-gradient2 {
+  border: double 1px transparent;
+  background-image: linear-gradient(black, black), 
   linear-gradient(
     90deg,
     #77C1C6,
@@ -68,18 +81,14 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: rgb(79, 79, 79);
+  background: rgb(42, 42, 42);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(42, 42, 42);
+  background: rgb(60, 60, 60);
   border-radius: 10px;
   
 }
 
 
-::-webkit-scrollbar-corner {
-  background: #2A2A2A;
-  border-radius: 10px;
-}
