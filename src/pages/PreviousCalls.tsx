@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import AvatarChamados from '../assets/images/Avatar.png';
+import AvatarChamados from '../assets/images/avatar.png';
 
 interface Ticket {
   idTicket: string;
