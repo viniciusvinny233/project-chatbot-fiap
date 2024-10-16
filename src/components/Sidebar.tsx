@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'; 
 
 import HomeIcon from '../assets/images/pagina-inicial.png';
 import ChatbotIcon from '../assets/images/chatbot.png';
@@ -25,7 +26,7 @@ const Sidebar: React.FC = () => {
       }
     };
 
-    handleResize(); // Set initial state
+    handleResize();
     window.addEventListener('resize', handleResize);
 
     return () => window.removeEventListener('resize', handleResize);
@@ -34,7 +35,7 @@ const Sidebar: React.FC = () => {
   return (
     <div className={`relative  ${isMobile ? 'z-50 w-2' : 'flex'} `}>
       <div
-        className={`h-screen bg-[#2A2A2A] text-white flex flex-col p-4 transition-all duration-300 ${
+        className={`h-screen bg-[#2A2A2A] text-white flex flex-col p-6 transition-all duration-300 ${
           isCollapsed ? (isMobile ? 'w-2 relative p-1'  : 'w-2 relative p-1') : 'w-72 relative'
         } ${isMobile && isCollapsed ? 'absolute' : ''} ${
           isMobile && !isCollapsed ? 'absolute left-0 w-72' : ''
@@ -52,48 +53,48 @@ const Sidebar: React.FC = () => {
             <>
               <input
                 type="text"
-                className="w-full px-3 py-3 pl-5 pr-11 rounded-full bg-[rgba(191,243,255,0.5)] text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-3 pl-5 pr-11 rounded-full bg-[rgba(191,243,255,0.5)] text-gray-800 focus:outline-none hover:bg-[#92DCE1] focus:bg-[#92DCE1]"
               />
               <img src={LupaIcon} alt="Search" className="absolute right-4 w-5 h-5" />
             </>
           )}
         </div>
         <nav className={`flex flex-col space-y-8 text-[#BFF3FF] text-base`}>
-          <a
-            href="/"
+          <Link
+            to="/"
             className={`flex items-center space-x-2 hover:text-blue-500 ${isCollapsed ? 'justify-center' : ''}`}
           >
             <img src={HomeIcon} alt="Página Inicial" className="w-7 h-7 mr-1 " />
             {!isCollapsed && <span className="text-[1.1rem]">Página Inicial</span>}
-          </a>
-          <a
-            href="chatbot"
+          </Link>
+          <Link
+            to="/chatbot"
             className={`flex items-center space-x-2 hover:text-blue-500 ${isCollapsed ? 'justify-center' : ''}`}
           >
             <img src={ChatbotIcon} alt="Chatbot" className="w-7 h-7 mr-1" />
             {!isCollapsed && <span className="text-[1.1rem]">Chatbot</span>}
-          </a>
-          <a
-            href="faq"
+          </Link>
+          <Link
+            to="/faq"
             className={`flex items-center space-x-2 hover:text-blue-500 ${isCollapsed ? 'justify-center' : ''}`}
           >
             <img src={FaqIcon} alt="Perguntas Frequentes" className="w-7 h-7 mr-1" />
             {!isCollapsed && <span className="text-[1.1rem]">Chamados frequentes</span>}
-          </a>
-          <a
-            href="previous-calls"
+          </Link>
+          <Link
+            to="/previous-calls"
             className={`flex items-center space-x-2 hover:text-blue-500 ${isCollapsed ? 'justify-center' : ''}`}
           >
             <img src={PreviousCallsIcon} alt="Chamados Anteriores" className="w-7 h-7 mr-1" />
-            {!isCollapsed && <span className="text-[1.1rem]">Chamados</span>}
-          </a>
-          <a
-            href="about"
+            {!isCollapsed && <span className="text-[1.1rem]">Chamados anteriores</span>}
+          </Link>
+          <Link
+            to="/about"
             className={`flex items-center space-x-2 hover:text-blue-500 ${isCollapsed ? 'justify-center' : ''}`}
           >
             <img src={AboutIcon} alt="Sobre o Projeto" className="w-7 h-7 mr-1" />
             {!isCollapsed && <span className="text-[1.1rem]">Sobre o Projeto</span>}
-          </a>
+          </Link>
         </nav>
       </div>
       <button
