@@ -165,7 +165,7 @@ const TicketDetailsPage: React.FC = () =>
             <div className="space-y-4">
               {comments.map(comment => (
                 <div key={comment.idComentario} className="border-b border-gray-600 pb-2">
-                  <p><strong>Comentário:</strong> {comment.textoComentario} {comment.idTicket}</p>
+                  <p><strong>Comentário:</strong> {comment.textoComentario}</p>
                 </div>
               ))}
             </div>
