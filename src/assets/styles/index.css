@@ -14,12 +14,39 @@ body {
 .border-gradient-right {
   border-right: 1px solid;
   border-image: linear-gradient(
-    45deg,
+    0deg,
     rgba(130, 224, 245, 0),
     #77c1c6,
     #e27696,
     rgba(226, 118, 150, 0)
   ) 1;
+}
+
+.border-gradient-bottom {
+  border-bottom: 1px solid;
+  border-image: linear-gradient(
+    90deg,
+    rgba(130, 224, 245, 0),
+    #77c1c6,
+    #e27696,
+    rgba(226, 118, 150, 0)
+  ) 1;
+}
+
+.hover-background-topbar {
+  background: rgba(0, 0, 0, 0); /* Estado inicial transparente */
+  transition-duration: 500ms;
+  transition: ease-in;
+}
+
+.hover-background-topbar:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(226, 118, 150, 0)
+    #77c1c6,
+    #e27696,
+    rgba(226, 118, 150, 0)
+  );
 }
 
 .border-gradient {
