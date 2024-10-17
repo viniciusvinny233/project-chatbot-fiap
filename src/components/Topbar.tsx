@@ -19,8 +19,6 @@ const Topbar: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isOpen, setIsOpen] = useState(!false);
 
- 
-
   const toggleMenu = () => {
 
     if (isOpen == true) {
@@ -61,7 +59,7 @@ const Topbar: React.FC = () => {
           <>
             <button
               onClick={toggleMenu}
-              className={`absolute right-[-1rem] top-[5rem] lg:right-[-1.35rem] duration-300 flex'} bg-[#2A2A2A] p-1.5 rounded-full focus:outline-none `}
+              className={`absolute right-[-2rem] top-[5rem] w-10 h-16 lg:right-[-2rem] duration-300 flex'} bg-[#2A2A2A] p-1.5 rounded-lg focus:outline-none `}
             >
               <img
                 src={isOpen ? SetaDireita : SetaEsquerda}
@@ -191,12 +189,12 @@ const Topbar: React.FC = () => {
         {!isOpen && (
           <button
             onClick={toggleMenu}
-            className={`absolute right-[-1rem] top-[5rem]  ${isOpen ? ' duration-300 p-0 hidden' : 'right-[-1.5rem] lg:right-[-1.35rem] duration-300 flex'} bg-[#2A2A2A] p-1.5 rounded-full focus:outline-none `}
+            className={`absolute right-[-2rem] top-[5rem] w-10 h-16 lg:right-[-2rem] duration-300 flex'} bg-[#2A2A2A] p-1.5 rounded-lg focus:outline-none `}
           >
             <img
               src={isOpen ? SetaDireita : SetaEsquerda}
               alt="Toggle"
-              className={`w-6 h-6 text-[#000000] ${isOpen ? "w-10 h-8" : ""} `}
+              className={`w-6 h-6 text-[#000000] ${isOpen ? "w-10 h-6" : ""} `}
             />
           </button>)}
       </div>
