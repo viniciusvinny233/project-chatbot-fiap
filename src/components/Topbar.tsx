@@ -17,7 +17,9 @@ import Avatar from '../assets/images/avatar.png';
 
 const Topbar: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(!false);
+
+ 
 
   const toggleMenu = () => {
 
