@@ -53,7 +53,10 @@ const Topbar: React.FC = () => {
         {isMobile && (
           <><button onClick={toggleMenu} className="">
             <img src={ToolBar} alt="Icon" className="w-9 h-9" />
-          </button><img src={LogoShortIcon} alt="Icon" className="w-9 h-9" /></>
+          </button>
+            <Link to="/">
+              <img src={LogoShortIcon} alt="Icon" className="w-9 h-9" />
+              </Link></>
         )}
         {!isMobile && (
           <>
@@ -116,7 +119,7 @@ const Topbar: React.FC = () => {
           }`}>
 
         <div className={`h-screen  ${isOpen ? 'hidden' : 'relative p-5 z-50 w-72'}`}>
-          <div className="flex items-center mb-12 justify-between">
+          <div className="flex items-center mb-12 justify-between ">
             <img src={LogoMenu} alt="Icon" className={`min-w-14 h-14 ${isOpen ? 'mt-5 min-w-[0rem] h-[0rem]' : ''}`} />
             {!isOpen && (
               <span className="text-[2.5rem] font-extrabold text-[#92DCE1] font-montserrat">CATECH</span>
@@ -134,55 +137,55 @@ const Topbar: React.FC = () => {
             )}
           </div>
           <nav className={`flex flex-col space-y-5 text-[#BFF3FF] text-base `}>
-          <div className='hover:bg-gradient-to-r from-[#2c2d2d00] via-[#77c1c640] to-[#e2769660] rounded-md p-[0.65rem] '>
-            <Link
-              onClick={toggleMenu}
-              to="/"
-              className={`flex items-center space-x-2 hover:background-hover-topbar ${isOpen ? 'justify-center' : ''}`}
-            >
-              <img src={HomeIcon} alt="Página Inicial" className="w-7 h-7 mr-1 mx-[-1rem] my-[-1rem]" />
-              {!isOpen && <span className="text-[1.1rem]">Página Inicial</span>}
-            </Link>
+            <div className='hover:bg-gradient-to-r from-[#2c2d2d00] via-[#77c1c640] to-[#e2769660] rounded-md p-[0.65rem] '>
+              <Link
+                onClick={toggleMenu}
+                to="/"
+                className={`flex items-center space-x-2 hover:background-hover-topbar ${isOpen ? 'justify-center' : ''}`}
+              >
+                <img src={HomeIcon} alt="Página Inicial" className="w-7 h-7 mr-1 mx-[-0.8rem] my-[-1rem]" />
+                {!isOpen && <span className="text-[1.1rem]">Página Inicial</span>}
+              </Link>
             </div>
             <div className='hover:bg-gradient-to-r from-[#2c2d2d00] via-[#77c1c640] to-[#e2769660] rounded-md p-[0.65rem] '>
-            <Link
-              onClick={toggleMenu}
-              to="/chatbot"
-              className={`flex items-center space-x-2 hover:background-hover-topbar ${isOpen ? 'justify-center' : ''}`}
-            >
-              <img src={ChatbotIcon} alt="Chatbot" className="w-7 h-7 mr-1 mx-[-1rem] my-[-1rem]" />
-              {!isOpen && <span className="text-[1.1rem]">Chatbot</span>}
-            </Link>
+              <Link
+                onClick={toggleMenu}
+                to="/chatbot"
+                className={`flex items-center space-x-2 hover:background-hover-topbar ${isOpen ? 'justify-center' : ''}`}
+              >
+                <img src={ChatbotIcon} alt="Chatbot" className="w-7 h-7 mr-1 mx-[-0.8rem] my-[-1rem]" />
+                {!isOpen && <span className="text-[1.1rem]">Chatbot</span>}
+              </Link>
             </div>
             <div className='hover:bg-gradient-to-r from-[#2c2d2d00] via-[#77c1c640] to-[#e2769660] rounded-md p-[0.65rem] '>
-            <Link
-              onClick={toggleMenu}
-              to="/faq"
-              className={`flex items-center space-x-2 hover:background-hover-topbar ${isOpen ? 'justify-center' : ''}`}
-            >
-              <img src={FaqIcon} alt="Perguntas Frequentes" className="w-7 h-7 mr-1 mx-[-1rem] my-[-1rem]" />
-              {!isOpen && <span className="text-[1.1rem]">Chamados frequentes</span>}
-            </Link>
+              <Link
+                onClick={toggleMenu}
+                to="/faq"
+                className={`flex items-center space-x-2 hover:background-hover-topbar ${isOpen ? 'justify-center' : ''}`}
+              >
+                <img src={FaqIcon} alt="Perguntas Frequentes" className="w-7 h-7 mr-1 mx-[-0.8rem] my-[-1rem]" />
+                {!isOpen && <span className="text-[1.1rem]">Chamados frequentes</span>}
+              </Link>
             </div>
             <div className='hover:bg-gradient-to-r from-[#2c2d2d00] via-[#77c1c640] to-[#e2769660] rounded-md p-[0.65rem] '>
-            <Link
-              onClick={toggleMenu}
-              to="/previous-calls"
-              className={`flex items-center space-x-2 hover:background-hover-topbar ${isOpen ? 'justify-center' : ''}`}
-            >
-              <img src={PreviousCallsIcon} alt="Chamados Anteriores" className="w-7 h-7 mr-1 mx-[-1rem] my-[-1rem]" />
-              {!isOpen && <span className="text-[1.1rem]">Chamados anteriores</span>}
-            </Link>
+              <Link
+                onClick={toggleMenu}
+                to="/previous-calls"
+                className={`flex items-center space-x-2 hover:background-hover-topbar ${isOpen ? 'justify-center' : ''}`}
+              >
+                <img src={PreviousCallsIcon} alt="Chamados Anteriores" className="w-7 h-7 mr-1 mx-[-0.8rem] my-[-1rem]" />
+                {!isOpen && <span className="text-[1.1rem]">Chamados anteriores</span>}
+              </Link>
             </div>
             <div className='hover:bg-gradient-to-r from-[#2c2d2d00] via-[#77c1c640] to-[#e2769660] rounded-md p-[0.65rem] '>
-            <Link
-              onClick={toggleMenu}
-              to="/about"
-              className={`flex items-center space-x-2  ${isOpen ? 'justify-center' : ''}`}
-            >
-              <img src={AboutIcon} alt="Sobre o Projeto" className="w-7 h-7 mr-1 mx-[-1rem] my-[-1rem]" />
-              {!isOpen && <span className="text-[1.1rem]">Sobre o Projeto</span>}
-            </Link>
+              <Link
+                onClick={toggleMenu}
+                to="/about"
+                className={`flex items-center space-x-2  ${isOpen ? 'justify-center' : ''}`}
+              >
+                <img src={AboutIcon} alt="Sobre o Projeto" className="w-7 h-7 mr-1 mx-[-0.8rem] my-[-1rem]" />
+                {!isOpen && <span className="text-[1.1rem]">Sobre o Projeto</span>}
+              </Link>
             </div>
           </nav>
         </div>
