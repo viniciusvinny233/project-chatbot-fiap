@@ -150,7 +150,6 @@ body {
 
 ::-webkit-scrollbar-track {
   background: rgb(42, 42, 42);
-  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
