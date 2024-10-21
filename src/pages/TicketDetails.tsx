@@ -147,7 +147,7 @@ const TicketDetailsPage: React.FC = () => {
           {!isMobile && (
             <>
               <div>
-                <div className="w-[65rem] bg-slate-400 flex flex-wrap flex-row  border-gradient-previous-table">
+                <div className="w-[65rem]  flex flex-wrap flex-row  border-gradient-previous-table">
                   <div className='p-1 flex flex-col flex-wrap gap-5 w-full'>
                     <div className='p-4 flex flex-row justify-between w-full flex-wrap'>
                       <div>
@@ -251,7 +251,7 @@ const TicketDetailsPage: React.FC = () => {
                   <strong className='text-xl mr-6'>Comentar: </strong>
                   <input
                     type="text"
-                    className="my-4 p-3 h-10  bg-[#222222] rounded-lg  border md:w-[100%] border-[#363636] focus:outline-none focus:bg-[#1a1a1a]"
+                    className="my-4 p-3 h-10  bg-[#222222] rounded-lg  border  border-[#363636] focus:outline-none focus:bg-[#1a1a1a]"
                   /></div>
               </div>
             </>
@@ -259,7 +259,7 @@ const TicketDetailsPage: React.FC = () => {
           {isMobile && (
             <>
               <div className='w-full'>
-                <div className="min-w-[100%] md:w-[40rem] bg-slate-400 flex flex-wrap flex-row justify-around  border-gradient-previous-table h-[33.5rem] ">
+                <div className="min-w-[100%]   flex flex-wrap flex-row justify-around  border-gradient-previous-table h-[33.5rem] ">
                   <div className='p-5'>
                     <div className='flex flex-col gap-2 items-center text-center justify-around  h-[12rem] '>
                       <p><strong>RESPONSÁVEL:</strong></p>
@@ -339,7 +339,7 @@ const TicketDetailsPage: React.FC = () => {
                   <strong className='text-xl mr-6'>Comentar: </strong>
                   <input
                     type="text"
-                    className="my-4 p-3 h-10 bg-[#222222] rounded-lg  border  border-[#363636] focus:outline-none focus:bg-[#1a1a1a] md:w-[32rem] "
+                    className="my-4 p-3 h-10 bg-[#222222] rounded-lg  border  border-[#363636] focus:outline-none focus:bg-[#1a1a1a]  "
                   /></div>
               </div>
             </>
