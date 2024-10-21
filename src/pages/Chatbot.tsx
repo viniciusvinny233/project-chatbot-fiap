@@ -3,6 +3,7 @@ import BotIcon from '../assets/images/2.png';
 import AnexoIcon from '../assets/images/8.png';
 import EnviarIcon from '../assets/images/9.png';
 import CattyHi from '../assets/images/cattyHi.png';
+import { Link } from 'react-router-dom';
 
 // Função para formatar a data e hora
 const formatDateTime = (date: Date) => {
@@ -43,20 +44,6 @@ const Chatbot: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [firstMessage, setIsFirst] = useState(false);
 
-  const handleSendMessage = () => {
-    setIsFirst(true);
-    if (userInput.trim() === '') return;
-
-    const newMessages = [{ text: userInput, isUserMessage: true, timestamp: new Date() }, ...messages];
-    setMessages(newMessages);
-    setUserInput('');
-
-    setTimeout(() => {
-      const botResponse = getBotResponse(userInput);
-      setMessages([{ text: botResponse, isUserMessage: false, timestamp: new Date() }, ...newMessages]);
-    }, 1000);
-  };
-
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
@@ -74,6 +61,20 @@ const Chatbot: React.FC = () => {
     }
   };
 
+  const handleSendMessage = () => {
+    setIsFirst(true);
+    if (userInput.trim() === '') return;
+
+    const newMessages = [{ text: userInput, isUserMessage: true, timestamp: new Date() }, ...messages];
+    setMessages(newMessages);
+    setUserInput('');
+
+    setTimeout(() => {
+      const botResponse = getBotResponse(userInput);
+      setMessages([{ text: botResponse, isUserMessage: false, timestamp: new Date() }, ...newMessages]);
+    }, 1000);
+  };
+
   const getBotResponse = (userMessage: string) => {
     const responses: { [key: string]: string } = {
       'olá': 'Olá! Como posso ajudar você hoje?',
@@ -83,6 +84,17 @@ const Chatbot: React.FC = () => {
     };
 
     return responses[userMessage.toLowerCase()] || 'Desculpe, não entendi sua pergunta.';
+  };
+
+  const handleSendMessageFirst = () => {
+    setIsFirst(true);
+
+    // Cria a mensagem inicial do bot
+    const botMessage = "Olá! Como posso ajudar você hoje?";
+
+    // Atualiza o estado com a nova mensagem do bot
+    const newMessages = [{ text: botMessage, isUserMessage: false, timestamp: new Date() }, ...messages];
+    setMessages(newMessages);
   };
 
   useEffect(() => {
@@ -112,28 +124,33 @@ const Chatbot: React.FC = () => {
           {!firstMessage && (
             <div className="w-full bg-[#1a1a1a] pl-5">
               {/* Primeira caixa */}
-              <div className="border-gradient-chatbot border rounded-lg p-[-0.1px] text-white bg-[#1a1a1a] mb-4">
-              <div className='p-3'>
-                <h3 className="font-bold text-xl mb-2">Chamados frequentes e suas soluções</h3>
-                <p className="text-sm text-slate-300">
-                  Navegue pelos chamados que mais acontecem com soluções e comentários de outros colaboradores.
-                </p>
+              <Link to='/faq' >
+                <div className="border-gradient-chatbot border rounded-lg p-[-0.1px] text-white bg-[#1a1a1a] mb-4">
+                  <div className='p-3'>
+                    <h3 className="font-bold text-xl mb-2">Chamados frequentes e suas soluções</h3>
+                    <p className="text-sm text-slate-300">
+                      Navegue pelos chamados que mais acontecem com soluções e comentários de outros colaboradores.
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </Link>
 
               {/* Segunda caixa */}
-              <div className="border-gradient-chatbot rounded-lg p-[-0.1px] mb-4 border-4 text-white bg-[#1a1a1a]">
-                <div className='p-3'>
-                <h3 className="font-bold text-xl mb-2">Verificar histórico de chamados</h3>
-                <p className="text-sm text-slate-300">
-                  Navegue pelos seus chamados anteriores e em andamento.
-                </p>
+              <Link to='/previous-calls' >
+                <div className="border-gradient-chatbot rounded-lg p-[-0.1px] mb-4 border-4 text-white bg-[#1a1a1a]">
+                  <div className='p-3'>
+                    <h3 className="font-bold text-xl mb-2">Verificar histórico de chamados</h3>
+                    <p className="text-sm text-slate-300">
+                      Navegue pelos seus chamados anteriores e em andamento.
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </Link>
 
               {/* Terceira caixa com ícone à direita */}
-              <div className="border-gradient-chatbot border rounded-lg p-[-0.1px] text-white bg-[#1a1a1a] flex justify-between items-center">
-              <div className='p-3'>
+
+              <div onClick={handleSendMessageFirst} className="border-gradient-chatbot cursor-pointer border rounded-lg p-[-0.1px] text-white bg-[#1a1a1a] flex justify-between items-center">
+                <div className='p-3'>
                   <h3 className="font-bold text-xl mb-2">Iniciar chat com a Catty</h3>
                   <p className="text-sm text-slate-300">
                     Mande sua dúvida para que a Catty possa te ajudar!
@@ -142,6 +159,7 @@ const Chatbot: React.FC = () => {
                 <img src={CattyHi} alt="Catty" className="w-16 h-14 mr-4" />
               </div>
             </div>
+
           )}
         </div>
 
