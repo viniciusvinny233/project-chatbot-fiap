@@ -128,7 +128,7 @@ const Home: React.FC = () => {
             <img src={container.bgImg} alt="" className="h-[440px] sm:h-full object-cover w-full shadow-shape"/>
             <div className="absolute inset-0 flex flex-col items-center justify-center">
               <video src={container.containerVideo} autoPlay loop muted className="hidden sm:flex sm:w-5/6 lg:w-4/5 rounded-xl "/>
-              <video src={container.mobileContainerVideo} autoPlay loop muted className="sm:hidden rounded-xl w-3/4"/>
+              <video src={container.mobileContainerVideo} autoPlay loop muted playsInline className="sm:hidden rounded-xl w-3/4"/>
             </div>
           </div>
         </div>
