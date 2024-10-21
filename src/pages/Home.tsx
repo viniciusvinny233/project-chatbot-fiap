@@ -7,7 +7,7 @@ import logosCatechBlack from "../assets/home/images/LogosChallengeBlack.png";
 import sixthContainerFirstSectionBg from "../assets/home/images/sixthSectionFirstContainerBg.webp";
 import sixthContainerSecondSectionBg from "../assets/home/images/sixthSectionSecondContainerBg.webp";
 import sixthContainerSecondSectionImg from "../assets/home/images/fifthSectionSecondContainerImg.png";
-import sixthContainerFirstSectionImg from "../assets/home/images/fifthSectionfirstContainerImg.png";
+import sixthContainerFirstSectionImg from "../assets/home/images/fifthSectionSecondContainerImg.png";
 import github from "../assets/home/images/GitHub.png"
 import linkedin from "../assets/home/images/LinkedIn.png"
 
