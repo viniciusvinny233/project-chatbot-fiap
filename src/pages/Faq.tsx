@@ -461,6 +461,61 @@ const Faq: React.FC = () => {
 
       </>)
     },
+    {
+      question: "IT SISTEMA Y - Criação de usuário",
+      answer: "Este documento foi preparado para orientar a Gestão de Acessos – TI Aplicações quanto ao cadastramento de usuários no SYSTEMA Y utilizado pela equipe do Financeiro.",
+      description: (
+        <>
+          <strong>Introdução / Pré-requisitos para execução da IT</strong>
+          <p>Este documento foi preparado para orientar a Gestão de Acessos – TI Aplicações quanto ao cadastramento de usuários no SYSTEMA Y utilizado pela equipe do Financeiro.</p>
+          <p>Link de acesso: <a href="https://xxxxxxxxxxxx">https://xxxxxxxxxxxx</a></p>
+          <br></br>
+
+          <strong>Revisão Semestral de Acessos</strong>
+          <ul className="list-disc list-inside">
+            <li>Regularmente, os acessos ao Sistema deverão ser revisados pelo Gestor do time de GQ-Digital.</li>
+            <li>A lista de acessos ativos no sistema será gerada pelo time de Digital - Acessos.</li>
+            <li>A lista deve ser respondida pelo Gestor de Negócio validando a lista ativa ou informando quais inativações deverão ser realizadas.</li>
+            <li>O time de Digital - Acessos registrará as alterações a partir de chamados no Sistema de ITSM de Digital em nome do Gestor de GQ-Digital.</li>
+            <li>O time de Digital - Acessos executará a atualização e finalizará o chamado com status de resolvido.</li>
+          </ul>
+          <br></br>
+
+          <strong>Referências</strong>
+          <p>Não há referências.</p>
+          <br></br>
+
+          <strong>Descrição das Atividades</strong>
+          <p><strong>3.1 – Cadastro de usuários</strong></p>
+          <ul className="list-disc list-inside">
+            <li>Nome completo do usuário</li>
+            <li>CPF</li>
+            <li>RG</li>
+            <li>Login de rede do usuário</li>
+            <li>Perfil a ser atribuído ou usuário cópia</li>
+            <li>Ambiente que deseja acesso (DEV, QA e PRD)</li>
+            <li>Aval do Gerente (para acesso ao ambiente PRD)</li>
+            <li>Validação de Controles Internos</li>
+          </ul>
+          <p>Acesse o sistema através do link: <a href="https://xxxxxxxxxxxx">https://xxxxxxxxxxxx</a></p>
+          <br></br>
+
+          <p><strong>3.2 – Alteração de Cadastro de usuários</strong></p>
+          <ul className="list-disc list-inside">
+            <li>Nome completo do usuário</li>
+            <li>Login de rede do usuário</li>
+            <li>Ambiente que deseja acesso (DEV, QA e PRD)</li>
+            <li>Aval do Gerente (para acesso ao ambiente PRD)</li>
+          </ul>
+          <p>Abra o navegador e digite o endereço HTTPS://XXXX.</p>
+          <p>A página de login aparecerá, digite o nome de usuário e senha de um perfil Gestão de acessos e entre no sistema. Clicar em atualizar informação.</p>
+          <br></br>
+
+          <strong>Anexos</strong>
+          <p>Não há anexos.</p>
+        </>
+      )
+    }
   ];
 
   const filteredFaqs = faqs.filter((faq) =>
@@ -482,26 +537,26 @@ const Faq: React.FC = () => {
             </p>
             <div className="flex items-center justify-center flex-row">
               <div className=''>
-              <img src={LupaIcon} alt="Search" className=" relative left-[0.5rem] sm:left-[1rem] w-8 h-8 top-[2.5rem] " />
-              <input
-                type="text"
-                placeholder="Buscar um chamado ou assunto"
-                className=" p-3 pl-[2.7rem] sm:pl-[3.5rem] bg-[#222222] rounded-lg sm:w-[34rem] border w-[20rem] border-[#363636] focus:outline-none focus:bg-[#1a1a1a]"
-                value={searchTerm} // Conecte o valor ao estado
-                onChange={(e) => setSearchTerm(e.target.value)} // Atualize o termo de busca
-              />
+                <img src={LupaIcon} alt="Search" className=" relative left-[0.5rem] sm:left-[1rem] w-8 h-8 top-[2.5rem] " />
+                <input
+                  type="text"
+                  placeholder="Buscar um chamado ou assunto"
+                  className=" p-3 pl-[2.7rem] sm:pl-[3.5rem] bg-[#222222] rounded-lg sm:w-[34rem] border w-[20rem] border-[#363636] focus:outline-none focus:bg-[#1a1a1a]"
+                  value={searchTerm} // Conecte o valor ao estado
+                  onChange={(e) => setSearchTerm(e.target.value)} // Atualize o termo de busca
+                />
               </div>
             </div>
           </div>
           <Link to='/chatbot' >
-          {!isMobile && (<div className='flex flex-col justify-center items-center w-22 mt-4'>
-            
-            <img src={CattyHi} className=" w-22 h-16 " />
-            <p className="mt-2 text-gray-400 w-40 text-sm text-center">
-              Clique aqui para chamar a Catty
-            </p>
-            
-          </div>)}</Link>
+            {!isMobile && (<div className='flex flex-col justify-center items-center w-22 mt-4'>
+
+              <img src={CattyHi} className=" w-22 h-16 " />
+              <p className="mt-2 text-gray-400 w-40 text-sm text-center">
+                Clique aqui para chamar a Catty
+              </p>
+
+            </div>)}</Link>
         </div>
 
         <div className="mt-8 h-[40rem] md:h-[40rem]  ml-3 overflow-y-auto space-y-5 scrollbar-thin scrollbar-thumb-rounded-lg scrollbar-thumb-[#77C1C6] scrollbar-track-[#2a2a2a] pr-4 font-inter">
@@ -530,7 +585,7 @@ const Faq: React.FC = () => {
             </div>
           ))}
         </div>
-        
+
       </div>
     </div>
   );

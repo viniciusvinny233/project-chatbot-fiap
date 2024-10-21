@@ -18,6 +18,7 @@ import Avatar from '../assets/images/avatar.png';
 const Topbar: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isOpen, setIsOpen] = useState(!false);
+  const [searchTerm, setSearchTerm] = useState('');
 
   const toggleMenu = () => {
 
@@ -28,6 +29,24 @@ const Topbar: React.FC = () => {
     }
 
   };
+
+  const handleSearchChange = (e: { target: { value: React.SetStateAction<string>; }; }) => {
+    setSearchTerm(e.target.value);
+  };
+
+  // Dados das divs para filtrar
+  const menuItems = [
+    { to: "/", label: "Página Inicial", icon: HomeIcon },
+    { to: "/chatbot", label: "Chatbot", icon: ChatbotIcon },
+    { to: "/faq", label: "Chamados frequentes", icon: FaqIcon },
+    { to: "/previous-calls", label: "Chamados anteriores", icon: PreviousCallsIcon },
+    { to: "/about", label: "Sobre o Projeto", icon: AboutIcon }
+  ];
+
+  // Filtrar os itens do menu com base no termo de busca
+  const filteredItems = menuItems.filter(item =>
+    item.label.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   useEffect(() => {
     const handleResize = () => {
@@ -56,7 +75,7 @@ const Topbar: React.FC = () => {
           </button>
             <Link to="/">
               <img src={LogoShortIcon} alt="Icon" className="w-9 h-9" />
-              </Link></>
+            </Link></>
         )}
         {!isMobile && (
           <>
@@ -130,63 +149,27 @@ const Topbar: React.FC = () => {
               <>
                 <input
                   type="text"
+                  value={searchTerm}
+                  onChange={handleSearchChange}
                   className="w-full px-3 py-3 pl-5 pr-11 rounded-full bg-[rgba(191,243,255,0.5)] text-gray-800 focus:outline-none hover:bg-[#92DCE1] focus:bg-[#92DCE1]"
                 />
                 <img src={LupaIcon} alt="Search" className="absolute right-4 w-5 h-5" />
               </>
             )}
           </div>
-          <nav className={`flex flex-col space-y-5 text-[#BFF3FF] text-base `}>
-            <div className='hover:bg-gradient-to-r from-[#2c2d2d00] via-[#77c1c640] to-[#e2769660] rounded-md p-[0.65rem] '>
-              <Link
-                onClick={toggleMenu}
-                to="/"
-                className={`flex items-center space-x-2 hover:background-hover-topbar ${isOpen ? 'justify-center' : ''}`}
-              >
-                <img src={HomeIcon} alt="Página Inicial" className="w-7 h-7 mr-1 mx-[-0.8rem] my-[-1rem]" />
-                {!isOpen && <span className="text-[1.1rem]">Página Inicial</span>}
-              </Link>
-            </div>
-            <div className='hover:bg-gradient-to-r from-[#2c2d2d00] via-[#77c1c640] to-[#e2769660] rounded-md p-[0.65rem] '>
-              <Link
-                onClick={toggleMenu}
-                to="/chatbot"
-                className={`flex items-center space-x-2 hover:background-hover-topbar ${isOpen ? 'justify-center' : ''}`}
-              >
-                <img src={ChatbotIcon} alt="Chatbot" className="w-7 h-7 mr-1 mx-[-0.8rem] my-[-1rem]" />
-                {!isOpen && <span className="text-[1.1rem]">Chatbot</span>}
-              </Link>
-            </div>
-            <div className='hover:bg-gradient-to-r from-[#2c2d2d00] via-[#77c1c640] to-[#e2769660] rounded-md p-[0.65rem] '>
-              <Link
-                onClick={toggleMenu}
-                to="/faq"
-                className={`flex items-center space-x-2 hover:background-hover-topbar ${isOpen ? 'justify-center' : ''}`}
-              >
-                <img src={FaqIcon} alt="Perguntas Frequentes" className="w-7 h-7 mr-1 mx-[-0.8rem] my-[-1rem]" />
-                {!isOpen && <span className="text-[1.1rem]">Chamados frequentes</span>}
-              </Link>
-            </div>
-            <div className='hover:bg-gradient-to-r from-[#2c2d2d00] via-[#77c1c640] to-[#e2769660] rounded-md p-[0.65rem] '>
-              <Link
-                onClick={toggleMenu}
-                to="/previous-calls"
-                className={`flex items-center space-x-2 hover:background-hover-topbar ${isOpen ? 'justify-center' : ''}`}
-              >
-                <img src={PreviousCallsIcon} alt="Chamados Anteriores" className="w-7 h-7 mr-1 mx-[-0.8rem] my-[-1rem]" />
-                {!isOpen && <span className="text-[1.1rem]">Chamados anteriores</span>}
-              </Link>
-            </div>
-            <div className='hover:bg-gradient-to-r from-[#2c2d2d00] via-[#77c1c640] to-[#e2769660] rounded-md p-[0.65rem] '>
-              <Link
-                onClick={toggleMenu}
-                to="/about"
-                className={`flex items-center space-x-2  ${isOpen ? 'justify-center' : ''}`}
-              >
-                <img src={AboutIcon} alt="Sobre o Projeto" className="w-7 h-7 mr-1 mx-[-0.8rem] my-[-1rem]" />
-                {!isOpen && <span className="text-[1.1rem]">Sobre o Projeto</span>}
-              </Link>
-            </div>
+          <nav className={`flex flex-col space-y-5 text-[#BFF3FF] text-base`}>
+            {filteredItems.map((item, index) => (
+              <div key={index} className='hover:bg-gradient-to-r from-[#2c2d2d00] via-[#77c1c640] to-[#e2769660] rounded-md p-[0.65rem]'>
+                <Link
+                  onClick={toggleMenu}
+                  to={item.to}
+                  className={`flex items-center space-x-2 hover:background-hover-topbar ${isOpen ? 'justify-center' : ''}`}
+                >
+                  <img src={item.icon} alt={item.label} className="w-7 h-7 mr-1 mx-[-0.8rem] my-[-1rem]" />
+                  {!isOpen && <span className="text-[1.1rem]">{item.label}</span>}
+                </Link>
+              </div>
+            ))}
           </nav>
         </div>
         {!isOpen && (
