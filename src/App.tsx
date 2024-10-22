@@ -30,11 +30,11 @@ const App: React.FC = () => {
 
   return (
     <Router>
-      <div className={` bg-[#2A2A2A] flex ${isMobile ? `flex-col` : `flex-row` } `}>
-        <div className=''>
+      <div className={` flex ${isMobile ? `flex-col` : `flex-row` } `}>
+        <div className='bg-[#2A2A2A] '>
         <Topbar /> {/* Adiciona o menu lateral */}
         </div>
-        <div className="flex-1 text-white bg-[#1a1a1a] ">
+        <div className="flex-1 text-white">
           
           <Routes>
             <Route path="/" element={<Home />} />
