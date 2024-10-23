@@ -168,7 +168,7 @@ const PreviousCalls: React.FC = () => {
                   <p>(xx) xxxx-xxxx</p>
                 </div>
               </div>
-              <div className='flex flex-row gap-2 items-center bg-red-600 w-[20rem] h-[4.25rem] border-gradient-previous'>
+              <div className='flex flex-row gap-2 items-center w-[20rem] h-[4.25rem] border-gradient-previous'>
                 <div className='text-sm flex justify-around flex-row w-full flex-wrap'>
                   <div className='text-xs'>
                     <p>TICKETS RESOLVIDOS</p>
@@ -234,7 +234,7 @@ const PreviousCalls: React.FC = () => {
                   <p>(xx) xxxx-xxxx</p>
                 </div>
               </div>
-              <div className='flex flex-row gap-2 items-center bg-red-600 w-[100%] h-[4.25rem] border-gradient-previous'>
+              <div className='flex flex-row gap-2 items-center w-[100%] h-[4.25rem] border-gradient-previous'>
                 <div className='text-sm flex justify-around flex-row w-full flex-wrap'>
                   <div className='text-xs'>
                     <p>TICKETS RESOLVIDOS</p>
@@ -252,7 +252,7 @@ const PreviousCalls: React.FC = () => {
         )}
 
         {!isMobile && (
-          <div className="scrollbar relative p-0  border-gradient-previous-table h-[42.2rem] mt-8 left-0 right-0 rounded-lg bg-[#2a2a2a] overflow-y-auto ">
+          <div className="scrollbar relative p-0  border-gradient-previous-table h-[42.2rem] mt-8 left-0 right-0 rounded-md bg-[#2a2a2a] overflow-y-auto ">
             <div className='px-4 py-2 pb-2 '>
               {isLoading ? (
                 <div role="status" className='w-full h-full flex justify-center items-center mt-[16rem]' >
@@ -263,7 +263,7 @@ const PreviousCalls: React.FC = () => {
                   <span className="sr-only">Loading...</span>
                 </div>
               ) : error ? (
-                <p className="text-red-500">Erro: {error}</p>
+                <p className="">Erro: {error}</p>
               ) : (
                 <table className="min-w-full text-sm text-left text-gray-300 table-fixed">
                   <thead className="text-base uppercase border-b text-gray-300">
@@ -335,7 +335,7 @@ const PreviousCalls: React.FC = () => {
 
         {isMobile && (
           <>
-            <div className="scrollbar mb-5 relative h-[42.2rem] mt-8 left-0 right-0 border-gradient-previous-table rounded-lg bg-[#2a2a2a] overflow-y-auto  p-0">
+            <div className="scrollbar mb-5 relative h-[42.2rem] mt-8 left-0 right-0 border-gradient-previous-table bg-[#2a2a2a] overflow-y-auto  p-0">
               <div className='px-4 py-2 pb-2'>
                 {isLoading ? (
                   <div role="status" className='w-full h-full flex justify-center items-center mt-36' >
@@ -346,7 +346,7 @@ const PreviousCalls: React.FC = () => {
                     <span className="sr-only">Loading...</span>
                   </div>
                 ) : error ? (
-                  <p className="text-red-500">Erro: {error}</p>
+                  <p className="">Erro: {error}</p>
                 ) : (
                   <table className="min-w-full text-sm text-left text-gray-300 table-fixed">
                     <tbody>
