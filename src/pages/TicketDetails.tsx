@@ -159,9 +159,15 @@ const TicketDetailsPage: React.FC = () => {
                       </div>
                       <div>
                         <p><strong>ABERTURA</strong>
-                          <div>
-                            {ticket ? new Date(ticket.dataAbertura).toLocaleString('pt-BR', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' }) : 'N/A'}
-                          </div>
+                        <div>
+                          {ticket ? new Date(ticket.dataAbertura * 1000).toLocaleString('pt-BR', { 
+                            hour: '2-digit', 
+                            minute: '2-digit', 
+                            day: '2-digit', 
+                            month: '2-digit', 
+                            year: '2-digit'
+                          }) : 'N/A'}
+                        </div>
                         </p>
                       </div>
 
@@ -176,7 +182,14 @@ const TicketDetailsPage: React.FC = () => {
                       <div>
                         <p><strong>ATUALIZAÇÃO</strong>
                           <div>
-                            {ticket?.dataAtualizacao ? new Date(ticket.dataAtualizacao).toLocaleString('pt-BR', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' }) : 'N/A'}
+                          {ticket?.dataAtualizacao ? 
+                          new Date(ticket.dataAtualizacao * 1000).toLocaleString('pt-BR', { 
+                            hour: '2-digit', 
+                            minute: '2-digit', 
+                            day: '2-digit', 
+                            month: '2-digit', 
+                            year: '2-digit'
+                          }) : 'N/A'}
                           </div>
                         </p>
                       </div>
@@ -184,7 +197,14 @@ const TicketDetailsPage: React.FC = () => {
                       <div>
                         <p><strong>ENCERRAMENTO</strong>
                           <div>
-                            {ticket?.dataEncerramento ? new Date(ticket.dataEncerramento).toLocaleString('pt-BR', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' }) : 'N/A'}
+                          {ticket?.dataEncerramento ? 
+                            new Date(ticket.dataEncerramento * 1000).toLocaleString('pt-BR', { 
+                              hour: '2-digit', 
+                              minute: '2-digit', 
+                              day: '2-digit', 
+                              month: '2-digit', 
+                              year: '2-digit' 
+                            }) : 'N/A'}
                           </div>
                         </p>
                       </div>
@@ -192,7 +212,14 @@ const TicketDetailsPage: React.FC = () => {
                       <div>
                         <p><strong>RESOLUÇÃO</strong>
                           <div>
-                            {ticket?.dataRelatorioResolvido ? new Date(ticket.dataRelatorioResolvido).toLocaleString('pt-BR', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' }) : 'N/A'}
+                          {ticket?.dataRelatorioResolvido ? 
+                          new Date(ticket.dataRelatorioResolvido * 1000).toLocaleString('pt-BR', { 
+                            hour: '2-digit', 
+                            minute: '2-digit', 
+                            day: '2-digit', 
+                            month: '2-digit', 
+                            year: '2-digit' 
+                          }) : 'N/A'}
                           </div>
                         </p>
                       </div>
