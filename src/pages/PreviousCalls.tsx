@@ -87,10 +87,12 @@ const PreviousCalls: React.FC = () => {
 
   const formatUnixTimestampToDateTime = (unixTimestamp: number | null): string => {
     if (unixTimestamp === null) return 'N/A';
-    const date = new Date(unixTimestamp);
+  
+    const date = new Date(unixTimestamp * 1000);
+  
     return date.toLocaleString('pt-BR', {
       timeZone: 'America/Sao_Paulo',
-      year: 'numeric',
+      year: '2-digit',
       month: '2-digit',
       day: '2-digit',
       hour: '2-digit',
