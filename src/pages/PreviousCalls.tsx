@@ -22,21 +22,20 @@ const PreviousCalls: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
+  const [isModalOpen, setIsModalOpen] = useState(false); // Estado para o modal
   const navigate = useNavigate();
   const baseUrl = "https://softtek-api-5e04b4d63dfd.herokuapp.com/api/tickets";
   const pageSize = 5;
   const [sortConfig, setSortConfig] = useState<{ key: keyof Ticket; direction: 'ascending' | 'descending' }>({
-    key: 'numeroTicket', // Chave padrão de ordenação
+    key: 'numeroTicket',
     direction: 'ascending',
   });
 
-
-
   // Função para lidar com a ordenação
   const handleSort = (key: keyof Ticket) => {
-    let direction: 'ascending' | 'descending' = 'ascending'; // Tipo literal correto
+    let direction: 'ascending' | 'descending' = 'ascending';
     if (sortConfig.key === key && sortConfig.direction === 'ascending') {
-      direction = 'descending'; // Tipo literal correto
+      direction = 'descending';
     }
     setSortConfig({ key, direction });
   };
@@ -48,7 +47,6 @@ const PreviousCalls: React.FC = () => {
 
     if (aValue === undefined || bValue === undefined) return 0;
 
-    // Se os valores forem nulos, os coloca no final da lista
     if (aValue === null) return 1;
     if (bValue === null) return -1;
 
@@ -61,22 +59,14 @@ const PreviousCalls: React.FC = () => {
 
   const renderSortArrow = (key: keyof Ticket) => {
     if (sortConfig.key !== key) {
-      return '▾'; // Setas padrão quando a coluna não está sendo ordenada
+      return '▾';
     }
-    return sortConfig.direction === 'ascending' ? '▴' : '▾'; // Setas baseadas na direção
+    return sortConfig.direction === 'ascending' ? '▴' : '▾';
   };
-
-
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 1028) {
-        //setIsOpen(true);
-        setIsMobile(true);
-      } else {
-        //setIsOpen(false);
-        setIsMobile(false);
-      }
+      setIsMobile(window.innerWidth < 1028);
     };
 
     handleResize();
@@ -87,9 +77,9 @@ const PreviousCalls: React.FC = () => {
 
   const formatUnixTimestampToDateTime = (unixTimestamp: number | null): string => {
     if (unixTimestamp === null) return 'N/A';
-  
+
     const date = new Date(unixTimestamp * 1000);
-  
+
     return date.toLocaleString('pt-BR', {
       timeZone: 'America/Sao_Paulo',
       year: '2-digit',
@@ -150,10 +140,15 @@ const PreviousCalls: React.FC = () => {
       call.descricaoTicket.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  // Função para abrir o modal
+  const openModal = () => setIsModalOpen(true);
+
+  // Função para fechar o modal
+  const closeModal = () => setIsModalOpen(false);
   return (
+   <>
     <div className="flex flex-col items-center justify-between min-h-screen bg-[#1a1a1a] text-white p-4 md:p-13 pb-0">
       <div className="w-full max-w-7xl">
-
         {!isMobile && (
           <><div className='flex flex-col justify-center md:flex-row items-center'>
             <h1 className="text-4xl font-bold bg-gradient-to-r from-[#82E0F5] to-[#E27696] text-transparent bg-clip-text mt-2 md:text-center text-center md:mt-3">
@@ -195,12 +190,62 @@ const PreviousCalls: React.FC = () => {
                 </div>
                 <div className='flex'>
                   <img src={Slider} alt="Icon" className="w-9 h-9 mx-4" />
-                  <img src={FileSaver} alt="Icon" className="w-9 h-9" />
+                  <button onClick={openModal}>
+                  <img src={FileSaver} alt="Icon" className="w-9 h-9" /></button>
                 </div>
               </div>
             </div></>
         )}
-
+         {/* Modal */}
+         {isModalOpen && (
+            <div className="fixed inset-0 bg-zinc-950/70 flex items-center justify-center z-10 font-inter">
+              <div className="md:w-[640px] rounded-xl py-5 px-6 bg-[#252525]">
+                <div className="space-y-3 mb-5">
+                  <div className="font-semibold text-lg px-1 flex items-center justify-between">
+                    Abrir um novo chamado
+                    <button onClick={closeModal}>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="lucide lucide-x"
+                      >
+                        <path d="M18 6 6 18" />
+                        <path d="m6 6 12 12" />
+                      </svg>
+                    </button>
+                  </div>
+                  <div id="Separador" className="w-full h-px bg-zinc-700" />
+                </div>
+                <div className="flex flex-col space-y-2">
+                <div className="w-full px-4 py-4 rounded-md bg-[#1b1b1b] flex space-x-2 items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-user-round text-zinc-300"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
+              <input type="text" className="w-full bg-transparent outline-none" placeholder="Responsável"></input>
+            </div>
+                    <div className="w-full px-4 py-4 rounded-md bg-[#1b1b1b] flex space-x-2 items-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-message-circle-more text-zinc-300"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M8 12h.01"/><path d="M12 12h.01"/><path d="M16 12h.01"/></svg>
+                        <input type="text" className="w-full bg-transparent outline-none" placeholder="Assunto"></input>
+                  </div>
+                  <div className="w-full px-4 py-4 rounded-md bg-[#1b1b1b] flex space-x-2 items-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-calendar text-zinc-300"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+                        <input type="date" className="w-full bg-transparent outline-none dark:[color-scheme:dark]" placeholder="Assunto"></input>
+                  </div>
+                </div>
+                <button
+                  className="px-3 py-2 w-full bg-[#77C1C6] mt-4 rounded-md text-[#252525] font-semibold"
+                  onClick={closeModal}
+                >
+                  Confirmar criação do chamado
+                </button>
+              </div>
+            </div>
+          )}
         {isMobile && (
           <><div className='flex flex-col justify-center md:flex-row items-center'>
             <div className='flex flex-row w-[90%] md:w-[70%] justify-between mt-2 md:mt-3'>
@@ -265,7 +310,7 @@ const PreviousCalls: React.FC = () => {
               ) : error ? (
                 <p className="">Erro: {error}</p>
               ) : (
-                <table className="min-w-full text-sm text-left text-gray-300 table-fixed">
+                <table className="min-w-full text-sm text-left text-gray-300 table-fixed font-inter">
                   <thead className="text-base uppercase border-b text-gray-300">
                     <tr>
                       <th scope="col" className="px-2 py-2 cursor-pointer w-[8%]" onClick={() => handleSort('numeroTicket')}>
@@ -412,6 +457,7 @@ const PreviousCalls: React.FC = () => {
 
       </div>
     </div>
+    </>
   );
 };
 
