@@ -115,20 +115,20 @@ const Chatbot: React.FC = () => {
   }, []);
 
   return (
-    <div className={`flex flex-col items-center  w-full bg-custom-gradien ${!isMobile ? "min-h-screen" : 'h-[calc(100vh-4.5rem)]'} `}>
-      <div className={`flex flex-col-reverse bg-transparent text-black p-4 w-full  max-w-[57rem] mx-auto ${!isMobile ? "h-[90vh]" : 'h-[calc(91vh-4.5rem)]'} `}>
-        <div className="flex flex-col-reverse overflow-y-auto h-full scrollbar-thin scrollbar-thumb-rounded-lg scrollbar-thumb-[#77C1C6] scrollbar-track-[#2a2a2a] pr-4">
+    <div className={` font-inter flex flex-col items-center  w-full bg-custom-gradien  ${!isMobile ? "min-h-screen" : 'h-[calc(100vh-4.5rem)]'} `}>
+      <div className={`flex flex-col-reverse text-[#E3E3E3] p-4 w-full  max-w-[57rem] mx-auto ${!isMobile ? "h-[90vh]" : 'h-[calc(91vh-4.5rem)]'} `}>
+        <div className="flex flex-col-reverse overflow-y-auto h-full scrollbar-thin scrollbar-thumb-rounded-lg pr-4">
           {messages.map((message, index) => (
             <Message key={index} text={message.text} isUserMessage={message.isUserMessage} image={message.image} timestamp={message.timestamp} />
           ))}
           {!firstMessage && (
-            <div className="w-full bg-[#1a1a1a] pl-5">
+            <div className="w-full pl-5">
               {/* Primeira caixa */}
               <Link to='/faq' >
-                <div className="border-gradient-chatbot border rounded-lg p-[-0.1px] text-white bg-[#1a1a1a] mb-4">
-                  <div className='p-3'>
-                    <h3 className="font-bold text-xl mb-2">Chamados frequentes e suas soluções</h3>
-                    <p className="text-sm text-slate-300">
+                <div className="border-gradient-chatbot border rounded-lg p-[-0.1px]  mb-4 border-gradient-chatbot-hover hover:text-white">
+                  <div className="py-3.5 px-4">
+                    <h3 className="font-bold text-xl mb-1">Chamados frequentes e suas soluções</h3>
+                    <p className="text-sm  ">
                       Navegue pelos chamados que mais acontecem com soluções e comentários de outros colaboradores.
                     </p>
                   </div>
@@ -137,10 +137,10 @@ const Chatbot: React.FC = () => {
 
               {/* Segunda caixa */}
               <Link to='/previous-calls' >
-                <div className="border-gradient-chatbot rounded-lg p-[-0.1px] mb-4 border-4 text-white bg-[#1a1a1a]">
-                  <div className='p-3'>
-                    <h3 className="font-bold text-xl mb-2">Verificar histórico de chamados</h3>
-                    <p className="text-sm text-slate-300">
+                <div className="border-gradient-chatbot rounded-lg p-[-0.1px] mb-4 border-4  bg-[#1a1a1a]  border-gradient-chatbot-hover hover:text-white">
+                  <div className="py-3.5 px-4">
+                    <h3 className="font-bold text-xl mb-1">Verificar histórico de chamados</h3>
+                    <p className="text-sm ">
                       Navegue pelos seus chamados anteriores e em andamento.
                     </p>
                   </div>
@@ -149,10 +149,10 @@ const Chatbot: React.FC = () => {
 
               {/* Terceira caixa com ícone à direita */}
 
-              <div onClick={handleSendMessageFirst} className="border-gradient-chatbot cursor-pointer border rounded-lg p-[-0.1px] text-white bg-[#1a1a1a] flex justify-between items-center">
-                <div className='p-3'>
-                  <h3 className="font-bold text-xl mb-2">Iniciar chat com a Catty</h3>
-                  <p className="text-sm text-slate-300">
+              <div onClick={handleSendMessageFirst} className="border-gradient-chatbot cursor-pointer border rounded-lg p-[-0.1px] bg-[#1a1a1a] flex justify-between items-center  border-gradient-chatbot-hover hover:text-white">
+                <div className="py-3.5 px-4">
+                  <h3 className="font-bold text-xl mb-1">Iniciar chat com a Catty</h3>
+                  <p className="text-sm ">
                     Mande sua dúvida para que a Catty possa te ajudar!
                   </p>
                 </div>
