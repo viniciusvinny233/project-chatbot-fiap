@@ -132,9 +132,9 @@ const TicketDetailsPage: React.FC = () => {
   }, [idTicket]);
 
   return (
-    <div className="flex flex-col w-full items-center min-h-screen bg-[#1a1a1a] text-white p-4 md:p-13 pb-0">
+    <div className="flex flex-col w-full items-center min-h-screen bg-[#1a1a1a] text-white p-4 md:p-13 pb-0 font-inter ">
       <div className='flex flex-col justify-center md:flex-row items-center'>
-        <h1 className="text-4xl my-8 font-bold bg-gradient-to-r from-[#82E0F5] to-[#E27696] text-transparent bg-clip-text  md:text-center text-center ">
+        <h1 className="text-4xl my-8 font-extrabold bg-gradient-to-r from-[#82E0F5] to-[#E27696] text-transparent bg-clip-text  md:text-center text-center ">
           CHAMADOS
         </h1>
       </div>
@@ -143,13 +143,13 @@ const TicketDetailsPage: React.FC = () => {
       ) : error ? (
         <p className="text-red-500">Erro: {error}</p>
       ) : (
-        <div>
+        <div className="2xl:w-4/6 lg:w-full xl:w-5/6">
           {!isMobile && (
             <>
-              <div>
-                <div className="w-[65rem]  flex flex-wrap flex-row  border-gradient-previous-table">
-                  <div className='p-1 flex flex-col flex-wrap gap-5 w-full'>
-                    <div className='p-4 flex flex-row justify-between w-full flex-wrap'>
+            <div>
+                <div className=" w-full  flex flex-wrap flex-row  border-gradient-previous-table">
+                  <div className='flex flex-col flex-wrap gap-5 w-full p-5'>
+                    <div className='flex flex-row justify-between w-full flex-wrap'>
                       <div>
                         <p><strong>ID</strong>
                           <div>
@@ -176,6 +176,23 @@ const TicketDetailsPage: React.FC = () => {
                           <div>
                             {ticket?.descricaoTicket}
                           </div>
+                        </p>
+                      </div>
+
+                      <div>
+                        <p>
+                          <strong>STATUS</strong>
+                          <span
+                            className={`inline-block py-1 px-3 rounded-lg font-bold w-full text-center  ${
+                              ticket?.descricaoEstadoTicket === 'Resolvido'
+                                ? 'text-xs uppercase bg-lime-800 text-lime-400'
+                                : ticket?.descricaoEstadoTicket === 'Em Andamento'
+                                ? 'text-xs uppercase bg-yellow-800 text-yellow-200'
+                                : 'text-xs uppercase bg-zinc-700 text-zinc-400'
+                            }`}
+                          >
+                            {ticket?.descricaoEstadoTicket || 'N/A'}
+                          </span>
                         </p>
                       </div>
 
@@ -228,7 +245,7 @@ const TicketDetailsPage: React.FC = () => {
 
                     <div className='p-4 flex flex-row justify-around w-full flex-wrap'>
 
-                      <div className='w-[25%] '>
+                      <div className='w-[25%]'>
                         <div className='flex flex-col gap-2 items-start justify-around  h-[12rem] '>
                           <p><strong>RESPONSÁVEL:</strong></p>
                           <img src={AvatarChamados} className='h-20 w-h-20' alt="Avatar" />
