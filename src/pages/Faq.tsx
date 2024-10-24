@@ -87,7 +87,7 @@ const Faq: React.FC = () => {
       ),
     },
     {
-      question: "Atualizar dados da BU",
+      question: "ZBO103 - Atualizar dados da BU",
       answer: `Quando um colaborador DA EMPRESA X entrar em contato comunicado que agora seu e-mail deixará de ser DA EMPRESA X e se tornará DA EMPRESA X ou DA EMPRESA X(por exemplo). O analista N1 deve realizar as orientações descritas nessa IT.`,
       description: (<>
         <strong>Revisão Semestral de Acessos</strong>
@@ -266,7 +266,51 @@ const Faq: React.FC = () => {
         <strong>Anexo</strong>
         <p>N/A</p>
       </>)
-    },
+    },{
+      question: "Criar Conta de Usuário na ZBO104",
+      answer: "Instrução para criação de conta de usuário no SAP utilizando a transação ZBO104.",
+      description: (
+        <>
+          <strong>Introdução / Pré-requisitos para execução da IT</strong>
+          <p>Esta instrução de trabalho visa orientar o analista/assistente das áreas: Central de Serviços e Operação, a criar uma conta de usuário de sistema no cadastro único de usuários do SAP.</p>
+          <ul className="list-disc list-inside">
+            <li>Saber o número da Identidade do usuário, ou número do CPF</li>
+            <li>Possuir os dados da conta a ser criada</li>
+            <li>Acesso à transação ZBO104 e ao sistema específico</li>
+          </ul>
+          <br></br>
+    
+          <strong>Revisão Semestral de Acessos</strong>
+          <ul className="list-disc list-inside">
+            <li>Os acessos ao sistema devem ser revisados regularmente pelo Gestor do time de GQ-Digital.</li>
+            <li>A lista de acessos ativos será gerada pelo time de Digital - Acessos.</li>
+            <li>A lista deve ser validada pelo Gestor de Negócio, indicando quais inativações devem ser realizadas.</li>
+            <li>As alterações serão registradas no sistema de ITSM de Digital em nome do Gestor de GQ-Digital.</li>
+            <li>O time de Digital - Acessos executará a atualização e finalizará o chamado com status de resolvido.</li>
+          </ul>
+          <br></br>
+    
+          <strong>Referências</strong>
+          <p>Não há referências.</p>
+          <br></br>
+    
+          <strong>Descrição das Atividades</strong>
+          <ul className="list-disc list-inside">
+            <li>Passo 01: Abra o SAP Logon e clique duas vezes no ambiente "02) A EMPRESA X ERP Produção".</li>
+            <li>Passo 02: Digite a transação ZBO104 e pressione Enter.</li>
+            <li>Passo 03: Digite a identidade do colaborador e clique no botão "executar".</li>
+            <li>Passo 04: Para criar uma nova conta de sistema, clique no botão "novo" ou pressione F5.</li>
+            <li>Passo 05: Informe o sistema no campo ID Sistema e o login do usuário. Após preencher todos os campos, clique em "salvar".</li>
+            <li>Passo 06: Clique no botão "finalizar".</li>
+            <li>Passo 07: Clique no botão "voltar" para visualizar a conta de sistema criada para o colaborador.</li>
+          </ul>
+          <br></br>
+    
+          <strong>Anexos</strong>
+          <p>Não há anexos.</p>
+        </>
+      )
+    },    
     {
       question: "Alteração de Acessos",
       answer: `Esta Instrução de Trabalho visa orientar na atividade de alteração de acesso do usuário no sistema SISTEMA Y.`,
@@ -318,7 +362,7 @@ const Faq: React.FC = () => {
       </>)
     },
     {
-      question: "Alterar Perfil de Acesso ",
+      question: "Alterar Perfil de Acesso",
       answer: `Esta instrução de trabalho orienta o passo a passo para atribuição de grupos de acesso ao SISTEMA Y, para a atribuição do mesmo é necessário que os seguintes questionamentos tenham sido respondidos via chamado. Com autorização gerencial em anexo.`,
       description: (<>
         <strong>1. Introdução / Pré-requisitos para execução da IT</strong>
@@ -511,6 +555,100 @@ const Faq: React.FC = () => {
           <p>A página de login aparecerá, digite o nome de usuário e senha de um perfil Gestão de acessos e entre no sistema. Clicar em atualizar informação.</p>
           <br></br>
 
+          <strong>Anexos</strong>
+          <p>Não há anexos.</p>
+        </>
+      )
+    },{
+      question: "INFRA - AVD - Liberação de Acesso Azure Virtual Desktop",
+      answer: "Liberação de acesso ao SYSTEMA Y utilizando a ferramenta Azure Virtual Desktop (AVD).",
+      description: (
+        <>
+          <strong>Introdução / Pré-requisitos para execução da IT</strong>
+          <p>Liberação de acesso ao SYSTEMA Y.</p>
+          <ul className="list-disc list-inside">
+            <li>Aval do Gerente responsável com CDC.</li>
+            <li>Após a Central de Serviços coletar os pré-requisitos, o chamado será recategorizado para a fila do time de “X”.</li>
+            <li>Categoria: A</li>
+            <li>Subcategoria: B</li>
+            <li>Sintoma: C</li>
+            <li>Qualificação Sintoma: D</li>
+          </ul>
+          <br></br>
+    
+          <strong>Referências</strong>
+          <p>Não há referências.</p>
+          <br></br>
+    
+          <strong>Descrição das Atividades</strong>
+          <p><strong>Procedimento de liberação de acesso ao SYSTEMA Y</strong></p>
+          <ul className="list-disc list-inside">
+            <li>Validação de Licença: verificar se existe licença E5 publicada para o colaborador (M365 XXXXXXX XXX) no Active Directory.</li>
+            <li>Incluir o usuário no grupo de liberação da ferramenta Azure Virtual Desktop (AVD) "G-XXXXXX-SYSTEMA Y".</li>
+          </ul>
+          <br></br>
+    
+          <strong>Métodos de Acesso</strong>
+          <ul className="list-disc list-inside">
+            <li>Cliente Área de Trabalho do Windows (recomendado - 01)</li>
+            <li>Cliente Microsoft Store (recomendado - 02)</li>
+            <li>Cliente para área de trabalho MacOS</li>
+            <li>Cliente WEB (recomendado somente em último caso por não apresentar total performance)</li>
+          </ul>
+          <br></br>
+    
+          <strong>Anexos</strong>
+          <p>Não há anexos.</p>
+        </>
+      )
+    },
+    {
+      question: "ZBO104 Ativar e Inativar Conta de Usuário de Sistema",
+      answer: "Esta instrução de trabalho visa orientar a ativação ou inativação de contas no cadastro único de usuários do SAP.",
+      description: (
+        <>
+          <strong>Introdução / Pré-requisitos para execução da IT</strong>
+          <p>Esta instrução de trabalho visa orientar analista/assistente das áreas: Central de Serviços, Satélite e Operação, a ativar ou inativar uma conta de sistema no cadastro único de usuários do SAP.</p>
+          <ul className="list-disc list-inside">
+            <li>Número da Identidade do usuário no SAP, ou número do CPF</li>
+            <li>Dados da conta do sistema</li>
+            <li>Acesso à transação ZBO104 e ao sistema específico</li>
+            <li>Possuir login cadastrado e ativo no SYSTEMA Y e SAP na transação ZBO104</li>
+          </ul>
+          <br></br>
+    
+          <strong>Revisão Semestral de Acessos</strong>
+          <ul className="list-disc list-inside">
+            <li>Os acessos ao sistema devem ser revisados regularmente pelo Gestor do time de GQ-Digital.</li>
+            <li>A lista de acessos ativos será gerada pelo time de Digital - Acessos.</li>
+            <li>A lista deve ser validada pelo Gestor de Negócio, que irá indicar quais inativações devem ser realizadas.</li>
+            <li>As alterações serão registradas no sistema de ITSM de Digital em nome do Gestor de GQ-Digital.</li>
+            <li>O time de Digital - Acessos executará a atualização e finalizará o chamado com status de resolvido.</li>
+          </ul>
+          <br></br>
+    
+          <strong>Referências</strong>
+          <p>Não há referências.</p>
+          <br></br>
+    
+          <strong>Descrição das Atividades</strong>
+          <p><strong>3.1 – Ativação de Conta</strong></p>
+          <ul className="list-disc list-inside">
+            <li>Abrir o SAP Logon e acessar o ambiente "02) SAP ERP Produção".</li>
+            <li>Digite o número da identidade ou CPF do colaborador e pressione "Enter".</li>
+            <li>Para ativar uma conta, selecione-a e clique em "Ativar/inativar Conta" ou pressione "F6".</li>
+            <li>Verifique se o campo "Status cta" está conforme o solicitado ("A" para Ativo e "I" para Inativo).</li>
+          </ul>
+          <p>Observação: Para contas do SYSTEMA Y, siga o "Passo 5".</p>
+          <br></br>
+    
+          <p><strong>3.2 – Inativação de Conta</strong></p>
+          <ul className="list-disc list-inside">
+            <li>Siga os mesmos passos da ativação, porém, selecione "Inativar Conta".</li>
+            <li>Verifique se o campo "Status cta" está conforme o solicitado.</li>
+          </ul>
+          <br></br>
+    
           <strong>Anexos</strong>
           <p>Não há anexos.</p>
         </>
