@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-
-import HomeIcon from '../assets/images/pagina-inicial.png';
 import ChatbotIcon from '../assets/images/chatbot.png';
 import LogoMenu from '../assets/images/logo-menu.png';
 import FaqIcon from '../assets/images/perguntas-frequentes.png';
 import PreviousCallsIcon from '../assets/images/chamados-anteriores.png';
-import AboutIcon from '../assets/images/sobre.png';
 import LupaIcon from '../assets/images/4.png';
 import LogoShortIcon from '../assets/images/logo-short.png';
 import ToolBar from '../assets/images/tool-bar.png';
@@ -36,11 +33,10 @@ const Topbar: React.FC = () => {
 
   // Dados das divs para filtrar
   const menuItems = [
-    { to: "/", label: "Página Inicial", icon: HomeIcon },
+
     { to: "/chatbot", label: "Chatbot", icon: ChatbotIcon },
     { to: "/faq", label: "Chamados frequentes", icon: FaqIcon },
     { to: "/previous-calls", label: "Chamados anteriores", icon: PreviousCallsIcon },
-    { to: "/about", label: "Sobre o Projeto", icon: AboutIcon }
   ];
 
   // Filtrar os itens do menu com base no termo de busca
@@ -112,7 +108,7 @@ const Topbar: React.FC = () => {
                   to="/previous-calls"
                   className=""
                 >
-                  <img src={PreviousCallsIcon} alt="Icon" className="w-7 h-7" />
+                  <img src={PreviousCallsIcon} alt="Icon" className="w-7 h-7 " />
                 </Link>
                 <Link
                   to="/faq"
@@ -121,7 +117,7 @@ const Topbar: React.FC = () => {
                   <img src={FaqIcon} alt="Icon" className="w-7 h-7" />
                 </Link>
               </div>
-              <img src={Avatar} alt="Icon" className="w-14 h-14 mb-12" />
+              <img src={Avatar} alt="Icon" className="w-14 h-14 mb-5" />
             </div>
           </>
         )}
@@ -137,14 +133,15 @@ const Topbar: React.FC = () => {
         className={`fixed top-0 left-0 h-full border-gradient-right w-[18rem] bg-[#2A2A2A] text-white transition-transform transform   ${!isOpen ? 'translate-x-0' : '-translate-x-full'
           }`}>
 
-        <div className={`h-screen  ${isOpen ? 'hidden' : 'relative p-5 z-50 w-72'}`}>
-          <div className="flex items-center mb-12 justify-between ">
-            <img src={LogoMenu} alt="Icon" className={`min-w-14 h-14 ${isOpen ? 'mt-5 min-w-[0rem] h-[0rem]' : ''}`} />
+        <div className={`h-screen flex flex-col justify-between ${isOpen ? 'hidden' : 'relative p-5 z-50 w-72'}`}>
+          <div className="">
+          <div className="flex items-center mb-10 justify-between ">
+            <img src={LogoMenu} alt="Icon" className={`min-w-14 h-14 mt-2 ${isOpen ? 'mt-5 min-w-[0rem] h-[0rem]' : ''}`} />
             {!isOpen && (
               <span className="text-[2.5rem] font-extrabold text-[#92DCE1] font-montserrat">CATECH</span>
             )}
           </div>
-          <div className={`flex w-full items-center mb-12 relative ${isOpen ? 'justify-center' : ''}`}>
+          <div className={`flex w-full items-center mb-9 relative ${isOpen ? 'justify-center' : ''}`}>
             {!isOpen && (
               <>
                 <input
@@ -157,7 +154,7 @@ const Topbar: React.FC = () => {
               </>
             )}
           </div>
-          <nav className={`flex flex-col space-y-5 text-[#BFF3FF] text-base`}>
+          <nav className={`flex flex-col space-y-3 text-[#BFF3FF] text-base`}>
             {filteredItems.map((item, index) => (
               <div key={index} className='hover:bg-gradient-to-r from-[#2c2d2d00] via-[#77c1c640] to-[#e2769660] rounded-md p-[0.65rem]'>
                 <Link
@@ -168,10 +165,23 @@ const Topbar: React.FC = () => {
                   <img src={item.icon} alt={item.label} className="w-7 h-7 mr-1 mx-[-0.8rem] my-[-1rem]" />
                   {!isOpen && <span className="text-[1.1rem]">{item.label}</span>}
                 </Link>
+                
               </div>
+
             ))}
+            
           </nav>
+          </div>
+          <div className="flex space-x-3">
+          <img src={Avatar} alt="Icon" className="w-14 h-14 " />
+          <div className="text-xs leading-4 font-inter flex flex-col justify-center">
+            <p className="text-sm font-medium">Nome do atendente</p>
+            <p>email@email.com</p>
+            <p>(xx) xxxxx-xxxx</p>
+            </div>
+          </div>
         </div>
+
         {!isOpen && (
           <button
             onClick={toggleMenu}
