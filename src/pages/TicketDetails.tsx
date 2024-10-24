@@ -132,7 +132,7 @@ const TicketDetailsPage: React.FC = () => {
   }, [idTicket]);
 
   return (
-    <div className="flex flex-col w-full items-center min-h-screen bg-[#1a1a1a] text-white p-4 md:p-13 pb-0 font-inter ">
+    <div className="flex flex-col w-full items-center min-h-screen bg-[#1a1a1a] text-white p-4 md:p-13 font-inter ">
       <div className='flex flex-col justify-center md:flex-row items-center'>
         <h1 className="text-4xl my-8 font-extrabold bg-gradient-to-r from-[#82E0F5] to-[#E27696] text-transparent bg-clip-text  md:text-center text-center ">
           CHAMADOS
@@ -302,70 +302,105 @@ const TicketDetailsPage: React.FC = () => {
           )}
           {isMobile && (
             <>
-              <div className='w-full'>
-                <div className="min-w-[100%]   flex flex-wrap flex-row justify-around  border-gradient-previous-table h-[33.5rem] ">
-                  <div className='p-5'>
-                    <div className='flex flex-col gap-2 items-center text-center justify-around  h-[12rem] '>
-                      <p><strong>RESPONSÁVEL:</strong></p>
-                      <img src={AvatarChamados} className='h-20 w-h-20' alt="Avatar" />
-                      <div className='text-sm'>
-                        <p><b>Nome do Atendente</b></p>
-                        <p>email@email.com</p>
-                        <p>(xx) xxxx-xxxx</p>
-                        <p><b>Categoria:</b> Analista AMS</p>
-                      </div>
-                    </div>
-                    <div className='p-1 flex flex-col flex-wrap gap-5 w-full'>
-                      <div className='p-2 flex flex-col gap-5 justify-between w-full flex-wrap mt-5'>
-                        <div className='flex justify-between  w-[19rem] '>
-                          <p><strong>ID</strong>
-                            <div>
-                              {ticket?.numeroTicket}
-                            </div>
-                          </p>
-                          <p><strong>ABERTURA</strong>
-                            <div>
-                              {ticket ? new Date(ticket.dataAbertura).toLocaleString('pt-BR', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' }) : 'N/A'}
-                            </div>
-                          </p>
-                        </div>
+            
+              <div className=''>
+              <div className="w-full border-gradient-previous-table flex flex-col items-center text-sm">
+                <div className="p-7 w-full">
 
-                        <div>
-                          <p><strong>ASSUNTO</strong>
-                            <div>
-                              {ticket?.descricaoTicket}
-                            </div>
-                          </p>
-                        </div>
-
-                        <div>
-                          <p><strong>ATUALIZAÇÃO</strong>
-                            <div>
-                              {ticket?.dataAtualizacao ? new Date(ticket.dataAtualizacao).toLocaleString('pt-BR', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' }) : 'N/A'}
-                            </div>
-                          </p>
-                        </div>
-                        <div className='flex w-[19rem] justify-between '>
-                          <div>
-                            <p><strong>RESOLUÇÃO</strong>
-                              <div>
-                                {ticket?.dataRelatorioResolvido ? new Date(ticket.dataRelatorioResolvido).toLocaleString('pt-BR', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' }) : 'N/A'}
-                              </div>
-                            </p>
-                          </div>
-                          <div>
-                            <p><strong>ENCERRAMENTO</strong>
-                              <div>
-                                {ticket?.dataEncerramento ? new Date(ticket.dataEncerramento).toLocaleString('pt-BR', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' }) : 'N/A'}
-                              </div>
-                            </p>
-                          </div>
-                        </div>
-                      </div>
+                  <div className="flex flex-col items-center text-center gap-4">
+                    <p className="text-base font-bold">RESPONSÁVEL:</p>
+                    <img src={AvatarChamados} className="h-20 w-20 rounded-full" alt="Avatar" />
+                    <div className="text-sm">
+                      <p className="font-bold">Nome do Atendente</p>
+                      <p>email@email.com</p>
+                      <p>(xx) xxxx-xxxx</p>
+                      <p><strong>Categoria:</strong> Analista AMS</p>
                     </div>
                   </div>
 
-                </div><h2 className="text-2xl font-bold mt-4 mb-4">Comentários</h2>
+                  <div className="grid grid-cols-2 gap-5 mt-6">
+                    <div className="flex flex-col items-start">
+                      <p className="font-bold">ID</p>
+                      <p className="mt-1">{ticket?.numeroTicket || 'N/A'}</p>
+                    </div>
+                    <div className="flex flex-col items-start">
+                      <p className="font-bold">ABERTURA</p>
+                      <p className="mt-1">
+                        {ticket ? new Date(ticket.dataAbertura).toLocaleString('pt-BR', { 
+                          hour: '2-digit', 
+                          minute: '2-digit', 
+                          day: '2-digit', 
+                          month: '2-digit', 
+                          year: 'numeric' 
+                        }) : 'N/A'}
+                      </p>
+                    </div>
+
+                    <div className="flex flex-col items-start">
+                      <p className="font-bold">ASSUNTO</p>
+                      <p className="mt-1">{ticket?.descricaoTicket || 'N/A'}</p>
+                    </div>
+
+                    <div className="flex flex-col items-start">
+                    <p>
+                      <strong>STATUS</strong>
+                      <span
+                        className={`inline-block py-1 px-1 rounded-lg font-bold w-full text-center mt-1 ${
+                          ticket?.descricaoEstadoTicket === 'Resolvido'
+                            ? 'text-xs uppercase bg-lime-800 text-lime-400'
+                            : ticket?.descricaoEstadoTicket === 'Em Andamento'
+                            ? 'text-xs uppercase bg-yellow-800 text-yellow-200'
+                            : 'text-xs uppercase bg-zinc-700 text-zinc-400'
+                        }`}
+                      >
+                        {ticket?.descricaoEstadoTicket || 'N/A'}
+                      </span>
+                    </p>
+                    </div>
+
+                    <div className="flex flex-col items-start">
+                      <p className="font-bold">ATUALIZAÇÃO</p>
+                      <p className="mt-1">
+                        {ticket?.dataAtualizacao ? new Date(ticket.dataAtualizacao).toLocaleString('pt-BR', { 
+                          hour: '2-digit', 
+                          minute: '2-digit', 
+                          day: '2-digit', 
+                          month: '2-digit', 
+                          year: 'numeric' 
+                        }) : 'N/A'}
+                      </p>
+                    </div>
+
+                    <div className="flex flex-col items-start">
+                      <p className="font-bold">RESOLUÇÃO</p>
+                      <p className="mt-1">
+                        {ticket?.dataRelatorioResolvido ? new Date(ticket.dataRelatorioResolvido).toLocaleString('pt-BR', { 
+                          hour: '2-digit', 
+                          minute: '2-digit', 
+                          day: '2-digit', 
+                          month: '2-digit', 
+                          year: 'numeric' 
+                        }) : 'N/A'}
+                      </p>
+                    </div>
+                    <div className="flex flex-col items-start">
+                      <p className="font-bold">ENCERRAMENTO</p>
+                      <p className="mt-1">
+                        {ticket?.dataEncerramento ? new Date(ticket.dataEncerramento).toLocaleString('pt-BR', { 
+                          hour: '2-digit', 
+                          minute: '2-digit', 
+                          day: '2-digit', 
+                          month: '2-digit', 
+                          year: 'numeric' 
+                        }) : 'N/A'}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+                <h2 className="text-2xl font-bold mt-4 mb-4">Comentários</h2>
                 {commentsError ? (
                   <p className="text-red-500">Erro ao carregar comentários: {commentsError}</p>
                 ) : comments.length === 0 ? (
@@ -379,11 +414,11 @@ const TicketDetailsPage: React.FC = () => {
                     ))}
                   </div>
                 )}
-                <div className='flex items-center  '>
+                <div className='flex flex-col mt-4'>
                   <strong className='text-xl mr-6'>Comentar: </strong>
                   <input
                     type="text"
-                    className="my-4 p-3 h-10 bg-[#222222] rounded-lg  border  border-[#363636] focus:outline-none focus:bg-[#1a1a1a]  "
+                    className="my-2 p-3 h-11 bg-[#222222] rounded-lg  border  border-[#363636] focus:outline-none focus:bg-[#1a1a1a]  "
                   /></div>
               </div>
             </>
