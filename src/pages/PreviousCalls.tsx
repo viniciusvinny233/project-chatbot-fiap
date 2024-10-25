@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AvatarChamados from '../assets/images/avatar.png';
 import FileSaver from '../assets/images/filesaver.png';
-import Slider from '../assets/images/slider.png';
 import LupaIcon from '../assets/images/lupa-faq.png';
 
 interface Ticket {
@@ -188,12 +187,11 @@ const PreviousCalls: React.FC = () => {
                     onChange={(e) => setSearchTerm(e.target.value)}
                     className="p-3 pl-[2.7rem] sm:pl-[3.5rem] h-[4.25rem] bg-[#222222] rounded-xl md:w-[36rem] border min-w-64 border-[#363636] focus:outline-none focus:bg-[#1a1a1a]" />
                 </div>
-                <div className='flex'>
-                  <img src={Slider} alt="Icon" className="w-9 h-9 mx-4" />
+              </div>
+              <div className='flex'>
                   <button onClick={openModal}>
                   <img src={FileSaver} alt="Icon" className="w-9 h-9" /></button>
                 </div>
-              </div>
             </div></>
         )}
          {/* Modal */}
@@ -248,11 +246,10 @@ const PreviousCalls: React.FC = () => {
           )}
         {isMobile && (
           <><div className='flex flex-col justify-center md:flex-row items-center'>
-            <div className='flex flex-row w-[90%] md:w-[70%] justify-between mt-2 md:mt-3'>
+            <div className='flex flex-row w-[90%] md:w-[70%] justify-center mt-2 md:mt-3'>
               <h1 className="text-4xl font-bold bg-gradient-to-r from-[#82E0F5] to-[#E27696] text-transparent bg-clip-text md:text-center text-center ">
                 CHAMADOS
               </h1>
-              <img src={Slider} alt="Icon" className="w-9 h-9 " />
             </div>
 
           </div>
