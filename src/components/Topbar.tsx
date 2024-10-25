@@ -135,49 +135,69 @@ const Topbar: React.FC = () => {
 
         <div className={`h-screen flex flex-col justify-between ${isOpen ? 'hidden' : 'relative p-5 z-50 w-72'}`}>
           <div className="">
-          <div className="flex items-center mb-10 justify-between ">
-            <img src={LogoMenu} alt="Icon" className={`min-w-14 h-14 mt-2 ${isOpen ? 'mt-5 min-w-[0rem] h-[0rem]' : ''}`} />
-            {!isOpen && (
-              <span className="text-[2.5rem] font-extrabold text-[#92DCE1] font-montserrat">CATECH</span>
-            )}
-          </div>
-          <div className={`flex w-full items-center mb-9 relative ${isOpen ? 'justify-center' : ''}`}>
-            {!isOpen && (
-              <>
-                <input
-                  type="text"
-                  value={searchTerm}
-                  onChange={handleSearchChange}
-                  className="w-full px-3 py-3 pl-5 pr-11 rounded-full bg-[rgba(191,243,255,0.5)] text-gray-800 focus:outline-none hover:bg-[#92DCE1] focus:bg-[#92DCE1]"
-                />
-                <img src={LupaIcon} alt="Search" className="absolute right-4 w-5 h-5" />
-              </>
-            )}
-          </div>
-          <nav className={`flex flex-col space-y-3 text-[#BFF3FF] text-base`}>
-            {filteredItems.map((item, index) => (
-              <div key={index} className='hover:bg-gradient-to-r from-[#2c2d2d00] via-[#77c1c640] to-[#e2769660] rounded-md p-[0.65rem]'>
-                <Link
-                  onClick={toggleMenu}
-                  to={item.to}
-                  className={`flex items-center space-x-2 hover:background-hover-topbar ${isOpen ? 'justify-center' : ''}`}
-                >
-                  <img src={item.icon} alt={item.label} className="w-7 h-7 mr-1 mx-[-0.8rem] my-[-1rem]" />
-                  {!isOpen && <span className="text-[1.1rem]">{item.label}</span>}
-                </Link>
-                
-              </div>
+            <div className="flex items-center mb-10 justify-between ">
+              <img src={LogoMenu} alt="Icon" className={`min-w-14 h-14 mt-2 ${isOpen ? 'mt-5 min-w-[0rem] h-[0rem]' : ''}`} />
+              {!isOpen && (
+                <span className="text-[2.5rem] font-extrabold text-[#92DCE1] font-montserrat">CATECH</span>
+              )}
+            </div>
+            <div className={`flex w-full items-center mb-9 relative ${isOpen ? 'justify-center' : ''}`}>
+              {!isOpen && (
+                <>
+                  <input
+                    type="text"
+                    value={searchTerm}
+                    onChange={handleSearchChange}
+                    className="w-full px-3 py-3 pl-5 pr-11 rounded-full bg-[rgba(191,243,255,0.5)] text-gray-800 focus:outline-none hover:bg-[#92DCE1] focus:bg-[#92DCE1]"
+                  />
+                  <img src={LupaIcon} alt="Search" className="absolute right-4 w-5 h-5" />
+                </>
+              )}
+            </div>
+            <nav className={`flex flex-col space-y-3 text-[#BFF3FF] text-base`}>
+              {filteredItems.map((item, index) => (
+                <div key={index} className='hover:bg-gradient-to-r from-[#2c2d2d00] via-[#77c1c640] to-[#e2769660] rounded-md p-[0.65rem]'>
+                  <Link
+                    onClick={toggleMenu}
+                    to={item.to}
+                    className={`flex items-center space-x-2 hover:background-hover-topbar ${isOpen ? 'justify-center' : ''}`}
+                  >
+                    <img src={item.icon} alt={item.label} className="w-7 h-7 mr-1 mx-[-0.8rem] my-[-1rem]" />
+                    {!isOpen && <span className="text-[1.1rem]">{item.label}</span>}
+                  </Link>
 
-            ))}
-            
-          </nav>
+                </div>
+
+              ))}
+
+            </nav>
+          </div>
+          <div className='flex flex-col h-96 '>
+            <div className='flex flex-row justify-between mb-2'>
+              <div className='text-[#A8A8A8] text-[0.9rem] '>Seu histórico com a Catty:</div>
+              <Link
+                onClick={toggleMenu}
+                to="/chatbot"
+              >
+                <div className='text-black text-[0.9rem] bg-[#BFF3FF] px-[0.4rem] rounded-md'>+</div>
+              </Link>
+            </div>
+            <div className='flex w-full h-[22rem] rounded-md bg-[#222222] p-4 overflow-y-auto'>
+              <div className='w-full'>
+                <ul className='text-white'>
+                  
+                    <li className='text-gray-400'>Nenhuma conversa disponível.</li>
+                  
+                </ul>
+              </div>
+            </div>
           </div>
           <div className="flex space-x-3">
-          <img src={Avatar} alt="Icon" className="w-14 h-14 " />
-          <div className="text-xs leading-4 font-inter flex flex-col justify-center">
-            <p className="text-sm font-medium">Nome do atendente</p>
-            <p>email@email.com</p>
-            <p>(xx) xxxxx-xxxx</p>
+            <img src={Avatar} alt="Icon" className="w-14 h-14 " />
+            <div className="text-xs leading-4 font-inter flex flex-col justify-center">
+              <p className="text-sm font-medium">Nome do atendente</p>
+              <p>email@email.com</p>
+              <p>(xx) xxxxx-xxxx</p>
             </div>
           </div>
         </div>
