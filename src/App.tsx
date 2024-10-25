@@ -42,6 +42,7 @@ const App: React.FC = () => {
             <Route path="/faq" element={<Faq />} />
             <Route path="/previous-calls" element={<PreviousCalls />} />
             <Route path="/about" element={<About />} />
+            <Route path="/adm-previous-calls" element={ <AdmPreviousCalls /> } />
             <Route path="/ticket/:idTicket" element={<TicketDetailsPage />} /> {/* Adiciona a rota para detalhes do ticket */}
           </Routes>
         </div>
