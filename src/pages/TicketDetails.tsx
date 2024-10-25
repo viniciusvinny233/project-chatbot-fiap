@@ -322,7 +322,7 @@ const TicketDetailsPage: React.FC = () => {
 
                     </div>
 
-                    <div className='p-4 flex flex-row justify-around w-full flex-wrap'>
+                    <div className='flex flex-row justify-around w-full flex-wrap'>
 
                       <div className='w-[25%]'>
                         <div className='flex flex-col gap-2 items-start justify-around  h-[12rem] '>
