@@ -5,6 +5,7 @@ import Chatbot from './pages/Chatbot';
 import Faq from './pages/Faq';
 import PreviousCalls from './pages/PreviousCalls';
 import About from './pages/About';
+import AdmPreviousCalls from './pages/AdmPreviousCalls'
 import TicketDetailsPage from './pages/TicketDetails'; // Importe a página de detalhes do ticket
 import { useEffect, useState } from 'react';
 
