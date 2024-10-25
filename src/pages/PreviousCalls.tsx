@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import AvatarChamados from '../assets/images/avatar.png';
 import FileSaver from '../assets/images/filesaver.png';
 import LupaIcon from '../assets/images/lupa-faq.png';
@@ -173,11 +173,15 @@ const PreviousCalls: React.FC = () => {
     <div className="flex flex-col items-center justify-between min-h-screen bg-[#1a1a1a] text-white p-4 md:p-13 pb-0">
       <div className="w-full max-w-7xl">
         {!isMobile && (
-          <><div className='flex flex-col justify-center md:flex-row items-center'>
+          <>
+          <div className='flex justify-center md:flex-row items-center relative'>
             <h1 className="text-4xl font-bold bg-gradient-to-r from-[#82E0F5] to-[#E27696] text-transparent bg-clip-text mt-2 md:text-center text-center md:mt-3">
               CHAMADOS
             </h1>
-          </div><div className='flex flex-row gap-2 items-center justify-around pt-5 flex-wrap'>
+            <Link to="/adm-previous-calls" className="absolute right-3 leading-3-4 text-xs mt-3 text-center border-[#acacac] px-3 text-[#acacac] py-1.5 border rounded-xl hover:bg-[#272727]">Visualizar página <br /> como administrador</Link>
+
+          </div>
+          <div className='flex flex-row gap-2 items-center justify-around pt-5 flex-wrap'>
               <div className='flex flex-row gap-2 items-center'>
                 <img src={AvatarChamados} alt="Avatar" />
                 <div className='text-sm'>
