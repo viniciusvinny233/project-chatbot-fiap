@@ -39,6 +39,25 @@ const PreviousCalls: React.FC = () => {
     setSortConfig({ key, direction });
   };
 
+  const closeModalAndAddFakeCall = () => {
+    const fakeCall: Ticket = {
+      idTicket: 'X',
+      numeroTicket: 'INC01234567',
+      descricaoTicket: 'Assunto',
+      descricaoEstadoTicket: 'Em Andamento',
+      dataAbertura: Math.floor(Date.now() / 1000),
+      dataAtualizacao: null,
+      dataRelatorioResolvido: null,
+      dataEncerramento: null,
+    };
+  
+    // Adiciona o chamado fictício ao estado
+    setCalls((prevCalls) => [fakeCall, ...prevCalls]);
+  
+    // Fecha o modal
+    setIsModalOpen(false);
+  };
+
   // Função para ordenar os dados
   const sortedCalls = [...calls].sort((a, b) => {
     const aValue = a[sortConfig.key];
@@ -128,6 +147,8 @@ const PreviousCalls: React.FC = () => {
   useEffect(() => {
     fetchAllPages();
   }, []);
+
+  
 
   const handleRowClick = (idTicket: string) => {
     navigate(`/ticket/${idTicket}`);
@@ -230,17 +251,13 @@ const PreviousCalls: React.FC = () => {
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-message-circle-more text-zinc-300"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M8 12h.01"/><path d="M12 12h.01"/><path d="M16 12h.01"/></svg>
                         <input type="text" className="w-full bg-transparent outline-none" placeholder="Assunto"></input>
                   </div>
-                  <div className="w-full px-4 py-4 rounded-md bg-[#1b1b1b] flex space-x-2 items-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-calendar text-zinc-300"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
-                        <input type="date" className="w-full bg-transparent outline-none dark:[color-scheme:dark]" placeholder="Assunto"></input>
-                  </div>
                 </div>
-                <button
-                  className="px-3 py-2 w-full bg-[#77C1C6] mt-4 rounded-md text-[#252525] font-semibold"
-                  onClick={closeModal}
-                >
-                  Confirmar criação do chamado
-                </button>
+<button
+  className="px-3 py-2 w-full bg-[#77C1C6] mt-4 rounded-md text-[#252525] font-semibold"
+  onClick={closeModalAndAddFakeCall}
+>
+  Confirmar criação do chamado
+</button>
               </div>
             </div>
           )}
