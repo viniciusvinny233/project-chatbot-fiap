@@ -22,6 +22,7 @@ const PreviousCalls: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false); // Estado para o modal
+  const [newCallSubject, setNewCallSubject] = useState('');
   const navigate = useNavigate();
   const baseUrl = "https://softtek-api-5e04b4d63dfd.herokuapp.com/api/tickets";
   const pageSize = 5;
@@ -43,7 +44,7 @@ const PreviousCalls: React.FC = () => {
     const fakeCall: Ticket = {
       idTicket: 'X',
       numeroTicket: 'INC01234567',
-      descricaoTicket: 'Assunto',
+      descricaoTicket: newCallSubject,
       descricaoEstadoTicket: 'Em Andamento',
       dataAbertura: Math.floor(Date.now() / 1000),
       dataAtualizacao: null,
@@ -53,10 +54,12 @@ const PreviousCalls: React.FC = () => {
   
     // Adiciona o chamado fictício ao estado
     setCalls((prevCalls) => [fakeCall, ...prevCalls]);
-  
+
     // Fecha o modal
     setIsModalOpen(false);
+    setNewCallSubject(''); // Limpa o campo de assunto após criar o chamado fictício
   };
+  
 
   // Função para ordenar os dados
   const sortedCalls = [...calls].sort((a, b) => {
@@ -249,7 +252,13 @@ const PreviousCalls: React.FC = () => {
             </div>
                     <div className="w-full px-4 py-4 rounded-md bg-[#1b1b1b] flex space-x-2 items-center">
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-message-circle-more text-zinc-300"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M8 12h.01"/><path d="M12 12h.01"/><path d="M16 12h.01"/></svg>
-                        <input type="text" className="w-full bg-transparent outline-none" placeholder="Assunto"></input>
+                      <input
+                            type="text"
+                            className="w-full bg-transparent outline-none"
+                            placeholder="Assunto"
+                            value={newCallSubject} // Adicione o valor do estado
+                            onChange={(e) => setNewCallSubject(e.target.value)} // Atualize o estado ao digitar
+                          />
                   </div>
                 </div>
 <button
