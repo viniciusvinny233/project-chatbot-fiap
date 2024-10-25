@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import AvatarChamados from '../assets/images/avatar.png';
+import { Link } from 'react-router-dom';
 
 // Definir a interface do ticket completo
 interface TicketDetails {
@@ -41,6 +42,7 @@ const TicketDetailsPage: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [commentsError, setCommentsError] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false); // Estado para controlar o modal
 
   useEffect(() => {
     const handleResize = () => {
@@ -64,56 +66,8 @@ const TicketDetailsPage: React.FC = () => {
   const ticketUrl = `https://softtek-api-5e04b4d63dfd.herokuapp.com/api/dadosticket?idticket=${idTicket}`;
   const commentsUrl = `https://softtek-api-5e04b4d63dfd.herokuapp.com/api/comentariosticket?idticket=${idTicket}`;
 
+  // Função para buscar dados de um ticket específico
   const fetchTicketDetails = async () => {
-    if (idTicket === 'X') {
-    const currentTimestamp = Math.floor(Date.now() / 1000);
-    const fakeTicket: TicketDetails = {
-      idTicket: 1234567,
-      numeroTicket: 'INC01234567',
-      descricaoTicket: 'Assunto',
-      descricaoEstadoTicket: 'Em Andamento',
-      resolucaoTicket: 'Resolução',
-      descricaoPrioridadeTicket: 'Prioridade',
-      descricaoSintomaTicket: 'Sintoma',
-      qualificacaoSintoma: 'Qualificação',
-      dataAbertura: currentTimestamp,
-      dataAtualizacao: null,
-      dataRelatorioResolvido: null,
-      dataEncerramento: null,
-      descricaoSubcategoriaRelatorio: 'Subcategoria',
-      descricaoCategoriaRelatorio: 'Categoria',
-      nomeLocal: 'Local',
-      descricaoCategoriaTecnico: 'Categoria Técnico',
-      descricaoGrupoAtribuicao: 'Grupo Atribuição',
-      descricaoGrupoCategoriaTecnico: 'Grupo Categoria Técnico',
-      descricaoGrupoSolicitante: 'Grupo Solicitante',
-    };
-
-    setTicket(fakeTicket);
-    setIsLoading(false);
-    return;
-  }
-
-  try {
-    const response = await fetch(ticketUrl, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-
-    if (!response.ok) {
-      throw new Error(`Erro ao buscar dados do ticket: ${response.status}`);
-    }
-
-    const data = await response.json();
-    setTicket(data); // Atualiza o estado com os dados do ticket
-    setIsLoading(false);
-  } catch (error: any) {
-    console.error('Erro ao buscar detalhes do ticket:', error);
-    setError(error.message);
-    setIsLoading(false);
-  }
     try {
       const response = await fetch(ticketUrl, {
         method: 'GET',
@@ -140,37 +94,6 @@ const TicketDetailsPage: React.FC = () => {
 
   // Função para buscar comentários do ticket
   const fetchTicketComments = async () => {
-    if (idTicket === 'X') {
-    const fakeComments: TicketComment[] = [
-      { idTicket: 1234567, idComentario: 1, textoComentario: 'Comentário Fictício', numeroTicket: 'INC01234567' },
-    ];
-    setComments(fakeComments);
-    return;
-  }
-
-  // Lógica normal para buscar comentários reais
-  try {
-    const response = await fetch(commentsUrl, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-
-    if (!response.ok) {
-      throw new Error(`Erro ao buscar comentários do ticket: ${response.status}`);
-    }
-
-    const data = await response.json();
-    if (Array.isArray(data.content)) {
-      setComments(data.content);
-    } else {
-      throw new Error('Comentários retornados não são um array.');
-    }
-  } catch (error: any) {
-    console.error('Erro ao buscar comentários:', error);
-    setCommentsError(error.message);
-  }
     try {
       const response = await fetch(commentsUrl, {
         method: 'GET',
@@ -211,11 +134,42 @@ const TicketDetailsPage: React.FC = () => {
   }, [idTicket]);
 
   return (
+
     <div className="flex flex-col w-full items-center min-h-screen bg-[#1a1a1a] text-white p-4 md:p-13 font-inter ">
-      <div className='flex flex-col justify-center md:flex-row items-center'>
+          {isModalOpen && (
+      <div className="fixed inset-0 bg-zinc-950/70 flex items-center justify-center z-10 font-inter">
+        <div className="rounded-xl py-5 px-6 bg-red-950 border border-red-900 flex justify-center items-center">
+          <div className="font-semibold text-lg px-1 flex items-center justify-center text-red-200">
+            Você não possui permissão para editar um chamado
+          </div>
+          <button
+            className="px-3 py-2 ml-3 bg-red-600 rounded-md text-[#252525] font-semibold"
+            onClick={() => setIsModalOpen(false)} // Fechar modal
+          >
+            Voltar
+          </button>
+        </div>
+      </div>
+    )}
+
+      <div className='flex flex-col justify-between px-2 md:flex-row items-center 2xl:w-4/6 lg:w-full xl:w-5/6'>
+      <Link to='/previous-calls'className="hidden lg:flex">
+      <svg width="20" height="20" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7.375 14.25L0.5 7.375M0.5 7.375L7.375 0.5M0.5 7.375H14.9375C15.9306 7.375 16.914 7.57061 17.8315 7.95066C18.7491 8.33071 19.5828 8.88776 20.285 9.59C20.9872 10.2922 21.5443 11.1259 21.9243 12.0435C22.3044 12.961 22.5 13.9444 22.5 14.9375C22.5 15.9306 22.3044 16.914 21.9243 17.8315C21.5443 18.7491 20.9872 19.5828 20.285 20.285C19.5828 20.9872 18.7491 21.5443 17.8315 21.9243C16.914 22.3044 15.9306 22.5 14.9375 22.5H10.125" stroke="#747474" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg></Link>
+
         <h1 className="text-4xl my-8 font-extrabold bg-gradient-to-r from-[#82E0F5] to-[#E27696] text-transparent bg-clip-text  md:text-center text-center ">
           CHAMADOS
         </h1>
+        <button onClick={() => setIsModalOpen(true)} className="hidden lg:flex" >
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13 25C19.6274 25 25 19.6274 25 13C25 6.37258 19.6274 1 13 1C6.37258 1 1 6.37258 1 13C1 19.6274 6.37258 25 13 25Z" stroke="#747474" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M19 23.395V19L13 6L7 19V23.395" stroke="#747474" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13 21C13 20.2044 13.3161 19.4413 13.8787 18.8787C14.4413 18.3161 15.2044 18 16 18C16.7956 18 17.5587 18.3161 18.1213 18.8787C18.6839 19.4413 19 20.2044 19 21" stroke="#747474" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13 25V21C13 20.2044 12.6839 19.4413 12.1213 18.8787C11.5587 18.3161 10.7956 18 10 18C9.20435 18 8.44129 18.3161 7.87868 18.8787C7.31607 19.4413 7 20.2044 7 21" stroke="#747474" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M9.7688 13H16.2313" stroke="#747474" stroke-linecap="round" stroke-linejoin="round" />
+        </svg></button>
+
       </div>
       {isLoading ? (
         <p>Carregando dados do ticket...</p>
@@ -322,7 +276,7 @@ const TicketDetailsPage: React.FC = () => {
 
                     </div>
 
-                    <div className='flex flex-row justify-around w-full flex-wrap'>
+                    <div className='p-4 flex flex-row justify-around w-full flex-wrap'>
 
                       <div className='w-[25%]'>
                         <div className='flex flex-col gap-2 items-start justify-around  h-[12rem] '>
