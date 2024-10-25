@@ -64,8 +64,56 @@ const TicketDetailsPage: React.FC = () => {
   const ticketUrl = `https://softtek-api-5e04b4d63dfd.herokuapp.com/api/dadosticket?idticket=${idTicket}`;
   const commentsUrl = `https://softtek-api-5e04b4d63dfd.herokuapp.com/api/comentariosticket?idticket=${idTicket}`;
 
-  // Função para buscar dados de um ticket específico
   const fetchTicketDetails = async () => {
+    if (idTicket === 'X') {
+    const currentTimestamp = Math.floor(Date.now() / 1000);
+    const fakeTicket: TicketDetails = {
+      idTicket: 1234567,
+      numeroTicket: 'INC01234567',
+      descricaoTicket: 'Assunto',
+      descricaoEstadoTicket: 'Em Andamento',
+      resolucaoTicket: 'Resolução',
+      descricaoPrioridadeTicket: 'Prioridade',
+      descricaoSintomaTicket: 'Sintoma',
+      qualificacaoSintoma: 'Qualificação',
+      dataAbertura: currentTimestamp,
+      dataAtualizacao: null,
+      dataRelatorioResolvido: null,
+      dataEncerramento: null,
+      descricaoSubcategoriaRelatorio: 'Subcategoria',
+      descricaoCategoriaRelatorio: 'Categoria',
+      nomeLocal: 'Local',
+      descricaoCategoriaTecnico: 'Categoria Técnico',
+      descricaoGrupoAtribuicao: 'Grupo Atribuição',
+      descricaoGrupoCategoriaTecnico: 'Grupo Categoria Técnico',
+      descricaoGrupoSolicitante: 'Grupo Solicitante',
+    };
+
+    setTicket(fakeTicket);
+    setIsLoading(false);
+    return;
+  }
+
+  try {
+    const response = await fetch(ticketUrl, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`Erro ao buscar dados do ticket: ${response.status}`);
+    }
+
+    const data = await response.json();
+    setTicket(data); // Atualiza o estado com os dados do ticket
+    setIsLoading(false);
+  } catch (error: any) {
+    console.error('Erro ao buscar detalhes do ticket:', error);
+    setError(error.message);
+    setIsLoading(false);
+  }
     try {
       const response = await fetch(ticketUrl, {
         method: 'GET',
@@ -92,6 +140,37 @@ const TicketDetailsPage: React.FC = () => {
 
   // Função para buscar comentários do ticket
   const fetchTicketComments = async () => {
+    if (idTicket === 'X') {
+    const fakeComments: TicketComment[] = [
+      { idTicket: 1234567, idComentario: 1, textoComentario: 'Comentário Fictício', numeroTicket: 'INC01234567' },
+    ];
+    setComments(fakeComments);
+    return;
+  }
+
+  // Lógica normal para buscar comentários reais
+  try {
+    const response = await fetch(commentsUrl, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`Erro ao buscar comentários do ticket: ${response.status}`);
+    }
+
+    const data = await response.json();
+    if (Array.isArray(data.content)) {
+      setComments(data.content);
+    } else {
+      throw new Error('Comentários retornados não são um array.');
+    }
+  } catch (error: any) {
+    console.error('Erro ao buscar comentários:', error);
+    setCommentsError(error.message);
+  }
     try {
       const response = await fetch(commentsUrl, {
         method: 'GET',
