@@ -83,7 +83,7 @@ const Chatbot: React.FC = () => {
   const getBotResponse = (userMessage: string): JSX.Element | string => {
     const responses: { [key: string]: { keywords: string[], response: JSX.Element | string } } = {
       manutencaoPerfil: {
-        keywords: ['manutenção', 'perfil', 'systema y'],
+        keywords: ['manutenção', 'perfil'],
         response: (
           <div>
             <p>Para realizar a manutenção de perfis no SYSTEMA Y, siga os passos abaixo:</p>
@@ -101,7 +101,7 @@ const Chatbot: React.FC = () => {
         )
       },
       prorrogacaoAcesso: {
-        keywords: ['prorrogar', 'acesso', 'terceiros', 'sap'],
+        keywords: ['prorrogar', 'acesso'],
         response: (
           <div>
             <p>Para prorrogar o acesso de terceiros no SAP, siga as etapas abaixo:</p>
@@ -119,7 +119,7 @@ const Chatbot: React.FC = () => {
         )
       },
       revogacaoAcesso: {
-        keywords: ['revogar', 'acesso', 'terceiros', 'sap'],
+        keywords: ['revogar', 'acesso'],
         response: (
           <div>
             <p>Para revogar o acesso de terceiros no SAP, siga as etapas abaixo:</p>
@@ -173,7 +173,7 @@ const Chatbot: React.FC = () => {
         )
       },
       ativarInativarTransferir: {
-        keywords: ['ativar', 'licença', 'systema y'],
+        keywords: ['ativar', 'licença'],
         response: (
           <div>
             <p>Para ativar, inativar ou transferir licenças de usuários no SYSTEMA Y, siga os passos:</p>
@@ -191,7 +191,7 @@ const Chatbot: React.FC = () => {
         )
       },
       ativarInativarTransferir2: {
-        keywords: ['inativar',  'licença', 'systema y'],
+        keywords: ['inativar',  'licença'],
         response: (
           <div>
             <p>Para ativar, inativar ou transferir licenças de usuários no SYSTEMA Y, siga os passos:</p>
@@ -209,7 +209,7 @@ const Chatbot: React.FC = () => {
         )
       },
       ativarInativarTransferir3: {
-        keywords: ['ativar', 'inativar', 'transferir', 'licença', 'systema y'],
+        keywords: ['transferir', 'licença'],
         response: (
           <div>
             <p>Para ativar, inativar ou transferir licenças de usuários no SYSTEMA Y, siga os passos:</p>
@@ -227,7 +227,7 @@ const Chatbot: React.FC = () => {
         )
       },
       alteracaoAcesso: {
-        keywords: ['alterar', 'acesso', 'systema y'],
+        keywords: ['alterar', 'acesso'],
         response: (
           <div>
             <p>Para alterar o acesso de um usuário no SYSTEMA Y, siga estas etapas:</p>
@@ -245,7 +245,7 @@ const Chatbot: React.FC = () => {
         )
       },
       alteracaoAcesso2: {
-        keywords: ['altero', 'acesso', 'systema y'],
+        keywords: ['altero', 'acesso'],
         response: (
           <div>
             <p>Para alterar o acesso de um usuário no SYSTEMA Y, siga estas etapas:</p>
@@ -263,7 +263,7 @@ const Chatbot: React.FC = () => {
         )
       },
       criacaoAcesso: {
-        keywords: ['criar', 'novo', 'acesso', 'systema y'],
+        keywords: ['criar', 'novo', 'acesso'],
         response: (
           <div>
             <p>Para criar um novo acesso no SYSTEMA Y, siga estas instruções:</p>
@@ -281,7 +281,7 @@ const Chatbot: React.FC = () => {
         )
       },
       criacaoAcesso2: {
-        keywords: ['crio', 'novo', 'acesso', 'systema y'],
+        keywords: ['crio', 'novo', 'acesso'],
         response: (
           <div>
             <p>Para criar um novo acesso no SYSTEMA Y, siga estas instruções:</p>
@@ -299,7 +299,7 @@ const Chatbot: React.FC = () => {
         )
       },
       trocarEmail1: {
-        keywords: ['trocar', 'email', 'empresa'],
+        keywords: ['trocar', 'email'],
         response: (
             <div>
             <p className="text-base">Para trocar o e-mail de uma empresa para outra com base no documento fornecido, siga os passos abaixo:</p>
@@ -343,6 +343,49 @@ const Chatbot: React.FC = () => {
       },
       trocarEmail2: {
         keywords: ['atualizar', 'dados', 'bu'],
+        response: (
+          <div>
+          <p className="text-base">Para trocar o e-mail de uma empresa para outra com base no documento fornecido, siga os passos abaixo:</p>
+          <br />
+          <ol>
+            <li><strong>Verifique a solicitação:</strong> Certifique-se de que o colaborador informou que o e-mail será alterado para o novo domínio (empresa).</li>
+            <br />
+            <li><strong>Acesse a ZBO103:</strong>
+              <ul>
+                <li>Inicie a edição no campo "E-mail".</li>
+                <li>Altere o e-mail para o novo domínio fornecido.</li>
+              </ul>
+            </li>
+            <br />
+            <li><strong>Preencha os campos adicionais:</strong>
+              <ul>
+                <li>No campo "Motivo", coloque o número do chamado.</li>
+                <li>No campo "Nr chamado", insira apenas o número da tarefa (TASK).</li>
+              </ul>
+            </li>
+            <br />
+            <li><strong>Grave as alterações</strong> na ZBO103 e no AD (Active Directory):
+              <ul>
+                <li>Atualize os campos de E-mail em "General" e "Account".</li>
+              </ul>
+            </li>
+            <br />
+            <li><strong>Evidencie as alterações:</strong> Inclua as evidências no chamado para garantir o registro adequado da mudança.</li>
+            <br />
+            <li><strong>Abra um novo chamado:</strong>
+              <ul>
+                <li>Antes de fechar o chamado atual, crie um novo chamado com as mesmas evidências e envie para a Equipe X.</li>
+                <li>Informe o número deste novo chamado no chamado inicial para fechar o processo corretamente.</li>
+              </ul>
+            </li>
+          </ol>
+          <br />
+          <p>Caso precise de mais detalhes, estou à disposição!</p>
+          </div>
+      )
+      },
+            trocarEmail3: {
+        keywords: ['atualizo', 'dados', 'bu'],
         response: (
           <div>
           <p className="text-base">Para trocar o e-mail de uma empresa para outra com base no documento fornecido, siga os passos abaixo:</p>
