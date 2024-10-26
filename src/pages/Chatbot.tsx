@@ -100,6 +100,17 @@ const Chatbot: React.FC = () => {
           </div>
         )
       },
+      simulacao: {
+        keywords: ['imule', 'usuário'],
+        response: (
+          <div>
+            <p>Claro! Vou simular que sou um usuário com um problema comum para que você possa praticar. Vamos começar:</p>
+            <br />
+            <p className="font-semibold">Usuário (Simulado por mim):</p>
+            <p>Olá, estou tentando acessar o sistema mas continuo recebendo uma mensagem de erro dizendo que o usuário ou a senha são inválidos. Você pode me ajudar?</p>
+          </div>
+        )
+      },
       prorrogacaoAcesso: {
         keywords: ['prorrogar', 'acesso'],
         response: (
